@@ -7,27 +7,26 @@
     <title>GitClone</title>
     <link rel="stylesheet" href="/client/static/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
 </head>
 <body>
-    <div class="gridEntry">
-        <div class="header">
-            <div class="navEntry"> 
-                <a href="../index.html"><i class="far fa-dot-circle"></i></a>
-                <p class="gitTitle">GitClone</p>
-                <p class="separator">|</p>
+    <div class="header">
+        <div class="navEntry"> 
+            <a href="../index.html"><i class="far fa-dot-circle"></i></a>
+            <p class="gitTitle">GitClone</p>
+            <p class="separator">|</p>
+            <div id="menu-list">
                 <a href="../index.html" class="pNav">Home</a>
                 <a href="../index.html" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
-                <i class="fas fa-bars pNav"></i>
-                <i class="far fa-moon pNav"></i>
-
             </div>
-        </div>
+            <!-- <i id="menu-icon"class="fas fa-bars pNav" onlick="toggleMenu()"></i> -->
+            <div class="sun-moon-theme">
+                <i class="far fa-moon pNav" title="dark dimmed"></i>
+                <!-- <i class="fas fa-sun"></i> -->
+            </div>
 
-        <div class="section1">THIS IS INDEX PAGE</div>
-        <div class="section2">Section2</div>
-        <div class="section3">Section3</div>
-        <div class="section4">Section4</div>
+        </div>
     </div>
-    
+    <script def src="/client/static/theme.js"></script>
+
 </body>
-</html>
