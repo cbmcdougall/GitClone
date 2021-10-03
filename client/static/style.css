@@ -21,7 +21,7 @@ body {
     "journalContainer journalContainer"
     "commentContainer commentContainer"
     "commentSection commentSection"
-    "section4 section4";
+    "footer footer";
 }
 
 .header {
@@ -44,9 +44,9 @@ body {
     background-color:#fcfcfcd7;
 }
 
-.section4 {
-    grid-area: section4;
-    background-color:yellow;
+.footer {
+    grid-area: footer;
+    background-color:#fcfcfc;
 }
 
 .fa-dot-circle {
@@ -224,6 +224,34 @@ textarea {
 }
 
 
-/* */
+/* All comments*/
+.commentSection {
+    height: auto;
+    margin: 0 120px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #e2deded7;
+    box-shadow: 0 1px 5px 1px #e2deded7;
+}
+
+
+/* footer */
+.footer {
+    display: flex;
+    color:#6e747a;
+    justify-content: space-evenly;
+    border-top: 1px solid #e2deded7;
+    margin: 0 80px;
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+.footer .fa-dot-circle {
+    color: #6e747a;
+    font-size: 22px;
+}
+
+
 
 
