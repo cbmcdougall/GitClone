@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -42,4 +45,63 @@ body {
 .section4 {
     grid-area: section4;
     background-color:yellow;
+}
+
+.fa-dot-circle {
+    font-size: 33px;
+    color: #fcfcfcd7;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fa-bars {
+    position: absolute;
+    right: 0;
+    margin-right:60px;
+}
+
+.fa-moon {
+    font-size: 15px;
+    color: #fcfcfcd7;
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right:30px;
+}
+
+.gitTitle {
+    font-size: 20px;
+    color: #fcfcfcd7;
+    margin-left: 10px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.separator {
+    font-size: 23px;
+    color: #57606a;
+    margin-left: 10px;
+}
+
+.navEntry {
+    display: flex;
+    padding: 15px 30px;
+}
+
+.pNav {
+    color: #fcfcfcd7;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fa-pencil-alt {
+    margin-left: 3px;
+}
+
+.pNav:hover {
+    color:#6e747a;
 }
