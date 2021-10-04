@@ -206,7 +206,7 @@ body {
 /* interaction bar*/
 #interaction-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     margin: 10px 70px;
     color:#6e747a;
 }
@@ -233,6 +233,16 @@ body {
 }
 
 .fa-thumbs-down:hover {
+    color:#57606a;
+}
+
+.fa-grin-squint-tears {
+    color:#6e747a;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.fa-grin-squint-tears:hover {
     color:#57606a;
 }
 /* comment container */
