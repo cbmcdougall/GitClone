@@ -1,0 +1,23 @@
+[
+  {
+    "id": "2",
+    "title": "Hello world!",
+    "text": "This is an example post",
+    "date": "04/10/2021",
+    "thumbsUp": "2",
+    "thumbsDown": "0",
+    "comments": [{
+        "body": "hello there!",
+        "dateAdded": "04/10/2021"
+    }]
+  },
+  {
+    "id": "3",
+    "title": "Hello again!",
+    "text": "This is another example post",
+    "date": "04/10/2021",
+    "thumbsUp": "0",
+    "thumbsDown": "3",
+    "comments": []
+  }
+]
