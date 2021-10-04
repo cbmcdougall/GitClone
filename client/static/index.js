@@ -1,6 +1,5 @@
 // Here we are conecting the backend to the frontend
 
-<<<<<<< HEAD
 // const { response } = require("express");
 
 const addPost = document.getElementById('gitAdd');
@@ -19,21 +18,7 @@ function showMessageBox() {
 }
 
 
-=======
-// const form = document.getElementById('myForm');
-// const resultDiv = document.getElementById('post');
->>>>>>> staging
 
-// form.addEventListener('submit', function (event) {
-//     event.preventDefault()
-//     let post = event.target.post.value
-//     //fetch('http://localhost:3000/weather?city='+city)
-//     .then(resp => resp.text())
-//     .then(post => resultDiv.innerHTML = post)
-<<<<<<< HEAD
-// })
-=======
-// })
 
 // Display recent posts, redirect to entry.html for the post clicked
 fetch("../../backend/data.json")
@@ -56,4 +41,3 @@ function renderPosts(data){
         document.body.appendChild(postSection);
     })
 }
->>>>>>> staging
