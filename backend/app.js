@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 //     res.send(weatherResult)
 //   } else {
 //     res.send('Post not found')}
-// })
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
