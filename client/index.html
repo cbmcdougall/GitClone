@@ -6,15 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitClone</title>
     <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./style0.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     
+
 </head>
+
 <body>
     <div class="header">
         <div class="navEntry"> 
             <a href="./index.html"><i class="far fa-dot-circle"></i></a>
             <p class="gitTitle">GitClone</p>
             <p class="separator">|</p>
+            <!-- <form id="myForm">
+                <label for="search"></label>
+                <input type="text" name="search" id="search" placeholder="Type your search term here" required>
+                <input type="submit" value="Search posts">
+            </form> -->
+
+
             <div id="menu-list">
                 <a href="./index.html" class="pNav">Home</a>
                 <a href="./index.html" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
@@ -23,11 +33,126 @@
                 <i id="moon" class="far fa-moon pNav" title="dark dimmed"></i>
                 <i id="sun" class="fas fa-sun hide-icon pNav"></i>
             </div>
-
         </div>
     </div>
 
-    <script def src="./static/theme.js"></script>
-    <script src="./static/index.js"></script>
+
+    <!-- put inside navbar -->
+    <form id="myForm">
+        <label for="search"></label>
+        <input type="text" name="search" id="search" placeholder="Type your search term here" required>
+        <input type="submit" value="Search posts">
+    </form>
+
+
+    <div id="post">
+        <!-- Posts will appear here -->
+        <input type="submit" value="git add" id="gitAdd">
+        <!-- <i class="fas fa-pencil-alt"></i> -->
+    </div>
+
+    <div id="message">
+        <h1>Posts</h1>
+        <div id="textAreaContainer">
+            <textarea name=“textArea” id=“textArea” spellcheck=“false”></textarea>
+            <input type="submit" value="git push" id="gitPush">
+        </div>
+
+    </div>
+
+    <div id="threads">
+        <h1>Previous Pushes</h1>
+
+        <div id="fiveDivs">
+            <div id="pushInteractionBar">
+                <p id="date">04thOct21</p>
+                <p id="commentNo">0</p>
+                <div id=“emojis” class=“emojis”>
+                    <div id=“emoji-thumbs-up”>
+                        <i class=“fas fa-thumbs-up”></i>
+                    </div>
+                    <div id=“emoji-thumbs-down”>
+                        <i class=“fas fa-thumbs-down”></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!-- previouPost2 -->
+<div id="fiveDivs">
+    <div id="pushInteractionBar">
+        <p id="date">04thOct21</p>
+        <p id="commentNo">0</p>
+        <div id=“emojis” class=“emojis”>
+            <div id=“emoji-thumbs-up”>
+                <i class=“fas fa-thumbs-up”></i>
+            </div>
+            <div id=“emoji-thumbs-down”>
+                <i class=“fas fa-thumbs-down”></i>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- previouPost3 -->
+
+<div id="fiveDivs">
+    <div id="pushInteractionBar">
+        <p id="date">04thOct21</p>
+        <p id="commentNo">0</p>
+        <div id=“emojis” class=“emojis”>
+            <div id=“emoji-thumbs-up”>
+                <i class=“fas fa-thumbs-up”></i>
+            </div>
+            <div id=“emoji-thumbs-down”>
+                <i class=“fas fa-thumbs-down”></i>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- previouPost4 -->
+
+<div id="fiveDivs">
+    <div id="pushInteractionBar">
+        <p id="date">04thOct21</p>
+        <p id="commentNo">0</p>
+        <div id=“emojis” class=“emojis”>
+            <div id=“emoji-thumbs-up”>
+                <i class=“fas fa-thumbs-up”></i>
+            </div>
+            <div id=“emoji-thumbs-down”>
+                <i class=“fas fa-thumbs-down”></i>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- previouPost5 -->
+
+<div id="fiveDivs">
+    <div id="pushInteractionBar">
+        <p id="date">04thOct21</p>
+        <p id="commentNo">0</p>
+        <div id=“emojis” class=“emojis”>
+            <div id=“emoji-thumbs-up”>
+                <i class=“fas fa-thumbs-up”></i>
+            </div>
+            <div id=“emoji-thumbs-down”>
+                <i class=“fas fa-thumbs-down”></i>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="./static/index.js"></script>
+<script src="./static/theme.js"></script>
 
 </body>
+</html>
