@@ -16,6 +16,18 @@
             <a href="./index.html"><i class="far fa-dot-circle"></i></a>
             <p class="gitTitle">GitClone</p>
             <p class="separator">|</p>
+            <div class="search-container">
+                <table class="element-search-container">
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="git fetch" class="search-git">
+                        </td>
+                        <td>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <!-- <form id="myForm">
                 <label for="search"></label>
                 <input type="text" name="search" id="search" placeholder="Type your search term here" required>
@@ -34,15 +46,6 @@
         </div>
     </div>
 
-
-    <!-- put inside navbar -->
-    <form id="myForm">
-        <label for="search"></label>
-        <input type="text" name="search" id="search" placeholder="Type your search term here" required>
-        <input type="submit" value="Search posts">
-    </form>
-
-
     <div id="post">
         <!-- Posts will appear here -->
         <input type="submit" value="git add" id="gitAdd">
@@ -51,6 +54,10 @@
 
     <div id="message">
         <h1>Posts</h1>
+        <div id="post-title">
+            <label for="title">Title:</label>
+            <input type="text" id="titlePost">
+        </div>
         <div id="textAreaContainer">
             <textarea name=“textArea” id=“textArea” spellcheck=“false”></textarea>
             <input type="submit" value="git push" id="gitPush">
