@@ -1,5 +1,9 @@
 */package-lock.json
 */node_modules
 .vscode
+<<<<<<< HEAD
 .DS_Store
 
+=======
+.DS_Store
+>>>>>>> merging
