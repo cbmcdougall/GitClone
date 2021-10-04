@@ -1,6 +1,6 @@
 [
   {
-    "id": "2",
+    "id": "1",
     "title": "Hello world!",
     "text": "This is an example post",
     "date": "04/10/2021",
@@ -12,7 +12,7 @@
     }]
   },
   {
-    "id": "3",
+    "id": "2",
     "title": "Hello again!",
     "text": "This is another example post",
     "date": "04/10/2021",
