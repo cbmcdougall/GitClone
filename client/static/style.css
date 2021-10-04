@@ -49,6 +49,11 @@ body {
     color: #6e747a;
 }
 
+.hide-icon {
+    visibility: hidden;
+    position: fixed;
+}
+
 /*******************************************/
 /*GRID for responsiveness*/
 .gridEntry {
