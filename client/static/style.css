@@ -49,6 +49,11 @@ body {
     color: #6e747a;
 }
 
+.hide-icon {
+    visibility: hidden;
+    position: fixed;
+}
+
 /*******************************************/
 /*GRID for responsiveness*/
 .gridEntry {
@@ -134,7 +139,7 @@ body {
 .pNav {
     color: #fcfcfcd7;
     font-size: 15px;
-    margin-left: 10px;
+    margin-left: 30px;
     margin-top: 7px;
     text-decoration: none;
     cursor: pointer;
@@ -308,6 +313,13 @@ textarea {
     font-size: 22px;
 }
 
+/*Search container*/
+.search-container {
+    margin-top: 5px;
+    display:flex;
+    width: 5vw;
+}
+
 
 
 /* RESPONSIVENESS */
@@ -315,5 +327,3 @@ textarea {
 
     
 }
-
-

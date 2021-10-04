@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitClone</title>
-    <link rel="stylesheet" href="/client/static/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     
 </head>
@@ -16,14 +16,20 @@
                 <a href="../index.html"><i class="far fa-dot-circle"></i></a>
                 <p class="gitTitle">GitClone</p>
                 <p class="separator">|</p>
+                <div class="search-container">
+                    <form>
+                      <input type="text" placeholder="git fetch" class="search">
+                      <a href="#"><i class="fas fa-search"></i></a>
+                    </form>
+                </div>
                 <div id="menu-list">
                     <a href="../index.html" class="pNav">Home</a>
                     <a href="../index.html" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
                 </div>
                 <!-- <i id="menu-icon"class="fas fa-bars pNav" onlick="toggleMenu()"></i> -->
                 <div class="sun-moon-theme">
-                    <i class="far fa-moon pNav" title="dark dimmed"></i>
-                    <!-- <i class="fas fa-sun"></i> -->
+                    <i id="moon" class="far fa-moon pNav" title="dark dimmed"></i>
+                    <i id="sun" class="fas fa-sun hide-icon"></i>
                 </div>
 
             </div>
@@ -48,10 +54,12 @@
                     <div id="num-of-comments">0</div>
                     <div id="emojis" class="emojis">
                         <div id="emoji-thumbs-up">
-                            <i class="fas fa-thumbs-up"></i>0
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>0</span>
                         </div>
                         <div id="emoji-thumbs-down">
-                            <i class="fas fa-thumbs-down"></i>0
+                            <i class="fas fa-thumbs-down"></i>
+                            <span>0</span>
                         </div>
                     </div>
                 </div>
@@ -65,10 +73,12 @@
 
             </form>
         </div>
-        <div class="commentSection">All comments here</div>
+        <div class="commentSection">All comments here
             <div id="all-comments">
 
             </div>
+            
+        </div>
         <div class="footer">
             <p>GitClone, 2021</p>
             <a href="../index.html"><i class="far fa-dot-circle"></i></a>
@@ -76,8 +86,7 @@
 
 
         </div>
-
-    </div>
-    <script def src="/client/static/theme.js"></script>
+    <script def src="./theme.js"></script>
+    <script src="./entry.js"></script>
 </body>
 </html>
