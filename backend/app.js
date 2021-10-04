@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/posts', (req, res) => {
+// app.get('/posts', (req, res) => {
 //   let weatherResult = weather[req.query.city]
 //   if (weatherResult) {
 //     res.send(weatherResult)
