@@ -36,7 +36,7 @@ body {
 
 .dark-theme textarea {
     background-color: #373a3d;
-    color: #fcfcfcd7;
+    color: white;
 }
 
 .dark-theme .commentSection {
@@ -47,6 +47,24 @@ body {
 .dark-theme .footer {
     background-color: #22272d;
     color: #6e747a;
+}
+
+.dark-theme #fiveDivs {
+    background-color: #22272d;
+    color: #6e747a;
+}
+
+.dark-theme #message h1{
+    color: #fcfcfcd7;
+}
+
+.dark-theme #threads h1{
+    color: #fcfcfcd7;
+}
+
+.dark-theme #titlePost {
+    background-color: #373a3d;
+    color: white;
 }
 
 .hide-icon {
