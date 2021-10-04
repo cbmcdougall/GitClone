@@ -18,10 +18,10 @@ function showMessageBox() {
 
 
 
-// Display recent posts, redirect to entry.html for the post clicked
-fetch("../../backend/data.json")
+// Display 5 most recent posts, redirect to entry.html for the post clicked
+fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
-  .then(data => renderPosts(data))
+  .then(data => renderPosts(data.slice(-5)))
   .catch(err => console.log(err));
 
 // <--OLD--> keeping for reference if needed
