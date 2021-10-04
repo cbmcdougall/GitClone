@@ -15,24 +15,4 @@ app.get('/pushes', (req,res) => {
   res.json(data);
 })
 
-
-
-
-// let journals = [
-//   {
-//     title:'My First Post',
-//     body: 'blahblahblah',
-//     timeCreated: 'timestamp',
-//     comments: [
-//       {
-//         body:'Nice one!',
-//         timeCreated: 'timestamp',
-//       },
-//       {
-//         body:'Great!',
-//         timeCreated: 'timestamp',
-//       }
-//     ]
-//   }
-// ]
 module.exports = app;
