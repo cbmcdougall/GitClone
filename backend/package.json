@@ -13,7 +13,7 @@
     "supertest": "^6.1.6"
   },
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --silent",
     "coverage": "jest --coverage --silent",
     "dev": "nodemon index.js",
     "start": "node index.js"
