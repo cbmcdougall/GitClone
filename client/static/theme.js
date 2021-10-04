@@ -1,8 +1,13 @@
 //For dark/light theme toggle
 const moonIcon = document.querySelector('.sun-moon-theme');
+const moon = document.getElementById('moon');
+const sun = document.getElementById('sun');
 
 moonIcon.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme')
+    document.body.classList.toggle('dark-theme');
+    moon.classList.toggle('hide-icon');
+    sun.classList.toggle('hide-icon');
+
 })
 ////////////////////////////////////////////////
 
