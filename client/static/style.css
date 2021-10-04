@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fcfcfc;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+/*dark-mode*/
+.dark-theme {
+    background-color: #22272d;
+    color: #fcfcfcd7;
+
+}
+
+.dark-theme .journalContainer {
+    background-color: #22272d;
+    color: #fcfcfcd7;
+}
+
+.dark-theme .commentContainer {
+    background-color: #22272d;
+    color: #fcfcfcd7;
+}
+
+.dark-theme .commentContainer p {
+    color: #fcfcfcd7;
+}
+
+.dark-theme textarea {
+    background-color: #373a3d;
+    color: #fcfcfcd7;
+}
+
+.dark-theme .commentSection {
+    background-color: #22272d;
+    color: #fcfcfcd7;
+}
+
+.dark-theme .footer {
+    background-color: #22272d;
+    color: #6e747a;
+}
+
+/*******************************************/
+/*GRID for responsiveness*/
+.gridEntry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "journalContainer journalContainer"
+    "commentContainer commentContainer"
+    "commentSection commentSection"
+    "footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: #24292f;
+    height: 7.5vh;
+    box-shadow: 0 0 7px 0 #1f2327;
+}
+
+.journalContainer {
+    grid-area: journalContainer;
+    background-color:#fcfcfcd7;
+}
+.commentContainer {
+    grid-area: commentContainer;
+    background-color:#fcfcfcd7;
+}
+.commentSection {
+    grid-area: commentSection;
+    background-color:#fcfcfcd7;
+}
+
+.footer {
+    grid-area: footer;
+    background-color:#fcfcfc;
+}
+/************************************/
+.fa-dot-circle {
+    font-size: 33px;
+    color: #fcfcfcd7;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fa-bars {
+    position: absolute;
+    right: 0;
+    margin-right:60px;
+}
+
+.sun-moon-theme {
+    font-size: 15px;
+    color: #fcfcfcd7;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    margin-right:30px;
+    height: 200vmin;
+    cursor: pointer;
+
+}
+
+.gitTitle {
+    font-size: 20px;
+    color: #fcfcfcd7;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.separator {
+    font-size: 23px;
+    color: #57606a;
+    margin-left: 10px;
+}
+
+.navEntry {
+    display: flex;
+    padding: 15px 30px;
+}
+
+.pNav {
+    color: #fcfcfcd7;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fa-pencil-alt {
+    margin-left: 3px;
+}
+
+.pNav:hover {
+    color:#6e747a;
+}
+
+/* #menu-icon {
+    display: none;
+} */
+
+#menu-list {
+    margin-top: 5px;
+}
+
+
+/*journal container*/
+.journalContainer {
+    height: auto;
+    margin: 0 110px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+
+}
+
+.journalTitle {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: -70px;
+}
+
+.journalTitlePlace {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+#journalTitleHash {
+    margin-left: 10px;
+    color: #6e747a;
+
+}
+
+#journalContent {
+    border: 2px solid #e2deded7;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px 1px #e2deded7;
+}
+
+#journalContentText {
+    margin: 5px 10px;
+    font-size: 15px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/* interaction bar*/
+#interaction-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 70px;
+    color:#6e747a;
+}
+
+.emojis {
+    display: flex;
+    color: #c4bbbbd7;
+}
+
+.fa-thumbs-up {
+    color:#6e747a;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.fa-thumbs-up:hover {
+    color:#57606a;
+}
+
+.fa-thumbs-down {
+    color:#6e747a;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.fa-thumbs-down:hover {
+    color:#57606a;
+}
+/* comment container */
+.commentContainer {
+    height: auto;
+    margin: -30px 120px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #e2deded7;
+    box-shadow: 0 1px 5px 1px #e2deded7;
+
+}
+
+.commentContainer p {
+    font-family: 'Lato', sans-serif;
+    color: #57606a;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/** text area **/
+textarea {
+    text-rendering: auto;
+    display: inline-block;
+    width: 1155px;
+    height: 100px;
+}
+
+
+#comment-form {
+    margin: 5px 10px;
+    display: block;
+    flex-direction: column;
+    text-align: left;
+}
+
+#git-commit {
+    width: 9vw;
+    border: 1px solid #146e5c;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #2c974b;
+    color: #fcfcfc;
+    margin-left: 1025px;
+    cursor: pointer;
+
+}
+
+#git-commit:hover {
+    background-color: #288d44;
+}
+
+
+/* All comments*/
+.commentSection {
+    height: auto;
+    margin: 0 120px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #e2deded7;
+    box-shadow: 0 1px 5px 1px #e2deded7;
+}
+
+
+/* footer */
+.footer {
+    display: flex;
+    color:#6e747a;
+    justify-content: space-evenly;
+    border-top: 1px solid #e2deded7;
+    margin: 0 80px;
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+.footer .fa-dot-circle {
+    color: #6e747a;
+    font-size: 22px;
+}
+
+
+
+/* RESPONSIVENESS */
+@media only screen and (max-width: 760px) {
+
+    
+}
+
+
