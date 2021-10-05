@@ -63,23 +63,37 @@ function renderPosts(data){
         // Add interaction bar
         const interactionBar = document.createElement("div");
         interactionBar.setAttribute("id", "pushInteractionBar");
+        
+        // Date of post
         const pushDate = document.createElement("P");
         pushDate.setAttribute("id", "date");
+        
+        // Post comments
         const pushComments = document.createElement("P");
         pushComments.setAttribute("id", "commentNo");
+        
+        // Emojis
         const emojiContainer = document.createElement("div");
         emojiContainer.setAttribute("id", "emojis");
         emojiContainer.className = "emojis";
+
         const emojiThumbsUp = document.createElement("div");
         emojiThumbsUp.setAttribute("id", "emoji-thumbs-up");
         const thumbsUp = document.createElement("I");
         thumbsUp.classList = "fas fa-thumbs-up";
         const thumbsUpNumber = document.createElement("div");
+        
         const emojiThumbsDown = document.createElement("div");
         emojiThumbsDown.setAttribute("id", "emoji-thumbs-down");
         const thumbsDown = document.createElement("I");
         thumbsDown.classList = "fas fa-thumbs-down";
         const thumbsDownNumber = document.createElement("div");
+
+        const emojiLaughing = document.createElement("div");
+        emojiLaughing.setAttribute("id", "emoji-laughing");
+        const laughing = document.createElement("I");
+        laughing.classList = "fas fa-grin-squint-tears";
+        const laughingNumber = document.createElement("div");
         
         // Insert data into elements
         postLink.textContent = post.title;
@@ -87,14 +101,18 @@ function renderPosts(data){
         pushComments.textContent = post.comments.length;
         thumbsUpNumber.textContent = post.thumbsUp;
         thumbsDownNumber.textContent = post.thumbsDown;
+        laughingNumber.textContent = post.laughing;
         
         // Insert elements to the DOM
         emojiThumbsUp.appendChild(thumbsUp);
         emojiThumbsUp.appendChild(thumbsUpNumber);
         emojiThumbsDown.appendChild(thumbsDown);
         emojiThumbsDown.appendChild(thumbsDownNumber);
+        emojiLaughing.appendChild(laughing);
+        emojiLaughing.appendChild(laughingNumber);
         emojiContainer.appendChild(emojiThumbsUp);
         emojiContainer.appendChild(emojiThumbsDown);
+        emojiContainer.appendChild(emojiLaughing);
         
         interactionBar.appendChild(pushDate);
         interactionBar.appendChild(pushComments);
