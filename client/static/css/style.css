@@ -403,10 +403,11 @@ textarea {
     padding: 8px 12px;
     display: none;
     width: 100%;
-    cursor: default;
+    cursor: pointer;
     border-bottom: 1px solid #fcfcfcd7;
     background-color: #24292f;
     color: #fcfcfcd7;
+    text-decoration: none;
   }
   .search-input.active .autocom-box li{
     display: block;
