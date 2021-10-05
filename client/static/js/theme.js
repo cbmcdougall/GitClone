@@ -11,7 +11,13 @@ moonIcon.addEventListener('click', () => {
 })
 ////////////////////////////////////////////////
 ///Search bar
+const searchContainer = document.querySelector(".search-container");
+const elementSearchContainer = searchContainer.querySelector(".element-search-container");
+const searchBar = searchContainer.querySelector("#searchBar");
 
+searchBar.onkeyup = (e) => {
+    console.log(e.target.value)
+}
 
 
 
