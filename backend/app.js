@@ -25,11 +25,19 @@ app.put('/gitpush', (req, res) => {
   userPost = req.body;
 
   // Create the new post
-  const newPost = addData(data, userPost)
+  const newPost = addPost(data, userPost)
   res.status(201).json(newPost)
 })
 
-function addData(data, inputData){
+// Add new comment to blog post
+app.put('/gitpush/comment', (req, res) => {
+  userComment = req.body;
+  const newComment = addComment(data, userComment);
+  res.status(201).json(newComment)
+})
+
+
+function addPost(data, inputData){
   // Create new post data
   newId = data.length + 1;
   postDate = new Date().toLocaleDateString()
@@ -49,6 +57,23 @@ function addData(data, inputData){
   
   // Return the added data
   return newPost;
+}
+
+function addComment(data, inputData){
+  // Find the relevant post
+  post = data[inputData.id-1];  // Post ids start at 1
+  
+  // Create new comment data
+  commentDate = new Date().toLocaleDateString()
+  newComment = {
+    "body": `${inputData.body}`,
+    "dateAdded": `${commentDate}`
+  }
+
+  // Add comment to data
+  post.comments.push(newComment); // Note change is local
+
+  return newComment;
 }
 
 module.exports = app;
