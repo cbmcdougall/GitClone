@@ -6,6 +6,7 @@ function addPost(data, inputData){
       "id": `${newId}`,
       "title": `${inputData.title}`,
       "text": `${inputData.text}`,
+      "gifUrl": `${inputData.gifUrl}`,
       "date": `${postDate}`,
       "thumbsUp": "0",
       "thumbsDown": "0",

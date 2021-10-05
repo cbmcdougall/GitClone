@@ -25,12 +25,14 @@ describe('api routes', () => {
         beforeAll(() => {
             this.testPost = {
                 "title": "API testing sure is a hoot!",
-                "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!"
+                "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!",
+                "gifUrl": ""
             };
             this.expectedResponse = {
                 "id": "3",
                 "title": "API testing sure is a hoot!",
                 "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!",
+                "gifUrl": "",
                 "date": new Date().toLocaleDateString(),
                 "thumbsUp": "0",
                 "thumbsDown": "0",
