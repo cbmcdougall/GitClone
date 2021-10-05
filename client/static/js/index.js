@@ -51,7 +51,9 @@ function renderPosts(data){
 
         // Add post title
         const postLink = document.createElement("A");
-        postLink.setAttribute("id", "postTitle");
+        const postTitle = document.createElement("h1");
+        postTitle.setAttribute("id", "journalTitle");
+        postLink.style.textDecoration = "none";
 
         // Set the post title as link to post
         postLink.setAttribute("href", "./static/entry.html");
@@ -62,15 +64,15 @@ function renderPosts(data){
         
         // Add interaction bar
         const interactionBar = document.createElement("div");
-        interactionBar.setAttribute("id", "pushInteractionBar");
+        interactionBar.setAttribute("id", "interaction-bar");
         
         // Date of post
         const pushDate = document.createElement("P");
-        pushDate.setAttribute("id", "date");
+        pushDate.setAttribute("id", "date-posted");
         
         // Post comments
         const pushComments = document.createElement("P");
-        pushComments.setAttribute("id", "commentNo");
+        pushComments.setAttribute("id", "num-of-comments");
         
         // Emojis
         const emojiContainer = document.createElement("div");
@@ -81,22 +83,22 @@ function renderPosts(data){
         emojiThumbsUp.setAttribute("id", "emoji-thumbs-up");
         const thumbsUp = document.createElement("I");
         thumbsUp.classList = "fas fa-thumbs-up";
-        const thumbsUpNumber = document.createElement("div");
+        const thumbsUpNumber = document.createElement("span");
         
         const emojiThumbsDown = document.createElement("div");
         emojiThumbsDown.setAttribute("id", "emoji-thumbs-down");
         const thumbsDown = document.createElement("I");
         thumbsDown.classList = "fas fa-thumbs-down";
-        const thumbsDownNumber = document.createElement("div");
+        const thumbsDownNumber = document.createElement("span");
 
         const emojiLaughing = document.createElement("div");
         emojiLaughing.setAttribute("id", "emoji-laughing");
         const laughing = document.createElement("I");
         laughing.classList = "fas fa-grin-squint-tears";
-        const laughingNumber = document.createElement("div");
+        const laughingNumber = document.createElement("span");
         
         // Insert data into elements
-        postLink.textContent = post.title;
+        postTitle.textContent = post.title;
         pushDate.textContent = post.date;
         pushComments.textContent = post.comments.length;
         thumbsUpNumber.textContent = post.thumbsUp;
@@ -104,6 +106,8 @@ function renderPosts(data){
         laughingNumber.textContent = post.laughing;
         
         // Insert elements to the DOM
+        postLink.appendChild(postTitle);
+
         emojiThumbsUp.appendChild(thumbsUp);
         emojiThumbsUp.appendChild(thumbsUpNumber);
         emojiThumbsDown.appendChild(thumbsDown);
