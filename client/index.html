@@ -56,10 +56,11 @@
         <h1>New Post</h1>
         <div id="post-title">
             <label for="title">Title:</label>
-            <input type="text" id="titlePost">
+            <input type="text" id="titlePost" required>
         </div>
         <div id="textAreaContainer">
-            <textarea name="textArea" id="textArea" spellcheck="false"></textarea>
+            <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea>
+            <p id="character-limit">Remaining characters: 400</p>
             <input type="submit" value="git push" id="gitPush">
         </div>
     </form>
@@ -74,5 +75,13 @@
     <script src="./static/js/index.js"></script>
     <script src="./static/js/theme.js"></script>
     <script src="./static/js/gitpush.js"></script>
+    <script>
+        // Wouldn't work in external .js script so doing here
+        function characterLimit() {
+            const currentInput = document.getElementById("textArea").value;
+            const remainingChars = 400-currentInput.length;
+            document.getElementById("character-limit").textContent = `Remaining characters: ${remainingChars}`;
+        }
+    </script>
 </body>
 </html>

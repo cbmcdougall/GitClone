@@ -1,5 +1,4 @@
-// Here we are conecting the backend to the frontend
-
+// Display git add form for new post
 const addPost = document.getElementById('gitAdd');
 const msgBox = document.getElementById('message');
 
@@ -15,31 +14,11 @@ function showMessageBox() {
     }
 }
 
-
-
-
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
   .then(data => renderPosts(data.slice(-5)))
   .catch(err => console.log(err));
-
-// <--OLD--> keeping for reference if needed
-// function renderPosts(data){
-//     data.forEach( post=> {
-//         const postSection = document.createElement("section");
-//         const postLink = document.createElement("A");
-//         const postTitle = document.createTextNode(`${post.title}`);
-//         postLink.setAttribute("href", "./static/entry.html");
-//         postLink.addEventListener("click", () => {
-//             // store the post data for entry.html to receive
-//             sessionStorage.journalPost = JSON.stringify(post);
-//         })
-//         postLink.appendChild(postTitle);
-//         postSection.appendChild(postLink);
-//         document.body.appendChild(postSection);
-//     })
-// }
 
 function renderPosts(data){
     const pushes = document.getElementById("threads");
