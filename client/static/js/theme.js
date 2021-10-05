@@ -11,16 +11,7 @@ moonIcon.addEventListener('click', () => {
 })
 ////////////////////////////////////////////////
 ///Search bar
-const searchBar = document.getElementById('searchBar');
-let postTitle = [];
 
-searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
-    const filteredPushes = postTitle.filter(archivePush => {
-        return archivePush.title.includes(searchString) || archivePush.text.includes(searchString);
-    })
-
-})
 
 
 

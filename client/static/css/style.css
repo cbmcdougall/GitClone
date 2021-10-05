@@ -406,8 +406,8 @@ textarea {
 #results-container {
     max-height: 250px;
     overflow-y: auto;
-    /*visibility: hidden;
-    opacity: 0;*/
+    visibility: hidden;
+    opacity: 0;
     transition: visibility 0.1s, opacity 0.1s;
 }
 
@@ -430,6 +430,10 @@ textarea {
     background-color: #6e747a;
 }
 
+.title-of-post {
+    font-size: 0.9em;
+    font-weight: bold;
+}
 
 .element-search-container .search-git {
     height: 100%;
