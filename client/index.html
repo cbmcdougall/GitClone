@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitClone</title>
-    <link rel="stylesheet" href="./static/style.css">
-    <link rel="stylesheet" href="./style0.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style0.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    
-
 </head>
 
 <body>
@@ -18,6 +16,39 @@
             <a href="./index.html"><i class="far fa-dot-circle"></i></a>
             <p class="gitTitle">GitClone</p>
             <p class="separator">|</p>
+            <div class="wrapper">
+                <div class="search-input">
+                  <a href="" target="_blank" hidden></a>
+                  <input type="text" placeholder="git fetch">
+                  <div class="autocom-box">
+                    <!-- here list are inserted from javascript -->
+                  </div>
+                  <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+            </div>
+            <!-- FOR REFERENCE-->
+            <!-- <div class="search-container">
+                <table class="element-search-container">
+                    <tr>
+                        <td>
+                            <input id="searchBar" type="text" placeholder="git fetch" class="search-git" spellcheck="false">
+                        </td>
+                        <td>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                </table>
+                <div id="results-container">
+                    <a href="#" class="instant-search-results">
+                        <div class="title-of-post">Title Name</div>
+                    </a>
+                </div>
+                <div id="results-container">
+                    <a href="#" class="instant-search-results">
+                        <div class="title-of-post">Title Name</div>
+                    </a>
+                </div>
+            </div> -->
             <!-- <form id="myForm">
                 <label for="search"></label>
                 <input type="text" name="search" id="search" placeholder="Type your search term here" required>
@@ -36,123 +67,42 @@
         </div>
     </div>
 
-
-    <!-- put inside navbar -->
-    <form id="myForm">
-        <label for="search"></label>
-        <input type="text" name="search" id="search" placeholder="Type your search term here" required>
-        <input type="submit" value="Search posts">
-    </form>
-
-
     <div id="post">
         <!-- Posts will appear here -->
         <input type="submit" value="git add" id="gitAdd">
         <!-- <i class="fas fa-pencil-alt"></i> -->
     </div>
 
-    <div id="message">
-        <h1>Posts</h1>
+    <form id="message">
+        <h1>New Post</h1>
+        <div id="post-title">
+            <label for="title">Title:</label>
+            <input type="text" id="titlePost" required>
+        </div>
         <div id="textAreaContainer">
-            <textarea name="textArea" id="textArea" spellcheck="false"></textarea>
+            <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea>
+            <p id="character-limit">Remaining characters: 400</p>
             <input type="submit" value="git push" id="gitPush">
         </div>
-
-    </div>
+    </form>
 
     <div id="threads">
         <h1>Previous Pushes</h1>
-        <!-- previouPost1 -->
-        <div id="fiveDivs">
-            <div id="pushInteractionBar">
-                <p id="date">04thOct21</p>
-                <p id="commentNo">0</p>
-                <div id="emojis" class="emojis">
-                    <div id="emoji-thumbs-up">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <div id="emoji-thumbs-down">
-                        <i class="fas fa-thumbs-down"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- previouPost2 -->
-        <div id="fiveDivs">
-            <div id="pushInteractionBar">
-                <p id="date">04thOct21</p>
-                <p id="commentNo">0</p>
-                <div id="emojis" class="emojis">
-                    <div id="emoji-thumbs-up">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <div id="emoji-thumbs-down">
-                        <i class="fas fa-thumbs-down"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- previouPost3 -->
-
-        <div id="fiveDivs">
-            <div id="pushInteractionBar">
-                <p id="date">04thOct21</p>
-                <p id="commentNo">0</p>
-                <div id="emojis" class="emojis">
-                    <div id="emoji-thumbs-up">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <div id="emoji-thumbs-down">
-                        <i class="fas fa-thumbs-down"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- previouPost4 -->
-
-        <div id="fiveDivs">
-            <div id="pushInteractionBar">
-                <p id="date">04thOct21</p>
-                <p id="commentNo">0</p>
-                <div id="emojis" class="emojis">
-                    <div id="emoji-thumbs-up">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <div id="emoji-thumbs-down">
-                        <i class="fas fa-thumbs-down"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- previouPost5 -->
-
-        <div id="fiveDivs">
-            <div id="pushInteractionBar">
-                <p id="date">04thOct21</p>
-                <p id="commentNo">0</p>
-                <div id="emojis" class="emojis">
-                    <div id="emoji-thumbs-up">
-                        <i class="fas fa-thumbs-up"></i>
-                    </div>
-                    <div id="emoji-thumbs-down">
-                        <i class="fas fa-thumbs-down"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <!-- index.js script renders this part -->
+    </div>
 
 
 
-<script src="./static/index.js"></script>
-<script src="./static/theme.js"></script>
-
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/theme.js"></script>
+    <script src="./static/js/gitpush.js"></script>
+    <script>
+        // Wouldn't work in external .js script so doing here
+        function characterLimit() {
+            const currentInput = document.getElementById("textArea").value;
+            const remainingChars = 400-currentInput.length;
+            document.getElementById("character-limit").textContent = `Remaining characters: ${remainingChars}`;
+        }
+    </script>
 </body>
 </html>

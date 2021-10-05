@@ -36,7 +36,7 @@ body {
 
 .dark-theme textarea {
     background-color: #373a3d;
-    color: #fcfcfcd7;
+    color: white;
 }
 
 .dark-theme .commentSection {
@@ -47,6 +47,24 @@ body {
 .dark-theme .footer {
     background-color: #22272d;
     color: #6e747a;
+}
+
+.dark-theme #fiveDivs {
+    background-color: #22272d;
+    color: #6e747a;
+}
+
+.dark-theme #message h1{
+    color: #fcfcfcd7;
+}
+
+.dark-theme #threads h1{
+    color: #fcfcfcd7;
+}
+
+.dark-theme #titlePost {
+    background-color: #373a3d;
+    color: white;
 }
 
 .hide-icon {
@@ -139,7 +157,7 @@ body {
 .pNav {
     color: #fcfcfcd7;
     font-size: 15px;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-top: 7px;
     text-decoration: none;
     cursor: pointer;
@@ -160,6 +178,8 @@ body {
 #menu-list {
     margin-top: 5px;
 }
+
+
 
 
 /*journal container*/
@@ -204,7 +224,7 @@ body {
 /* interaction bar*/
 #interaction-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     margin: 10px 70px;
     color:#6e747a;
 }
@@ -220,6 +240,16 @@ body {
     margin: 0 20px;
 }
 
+.fa-thumbs-up .emoji-clicked {
+    color:#57606a;
+}
+.fa-thumbs-down .emoji-clicked {
+    color:#57606a;
+}
+.fa-grin-squint-tears .emoji-clicked {
+    color:#57606a;
+}
+
 .fa-thumbs-up:hover {
     color:#57606a;
 }
@@ -231,6 +261,16 @@ body {
 }
 
 .fa-thumbs-down:hover {
+    color:#57606a;
+}
+
+.fa-grin-squint-tears {
+    color:#6e747a;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.fa-grin-squint-tears:hover {
     color:#57606a;
 }
 /* comment container */
@@ -256,17 +296,17 @@ body {
 textarea {
     text-rendering: auto;
     display: inline-block;
-    width: 1155px;
-    height: 100px;
+    width: 100%;
+    height: 10vh;
 }
 
 
-#comment-form {
+/* #comment-form {
     margin: 5px 10px;
     display: block;
     flex-direction: column;
     text-align: left;
-}
+} */
 
 #git-commit {
     width: 9vw;
@@ -275,8 +315,8 @@ textarea {
     height: 30px;
     background-color: #2c974b;
     color: #fcfcfc;
-    margin-left: 1025px;
     cursor: pointer;
+    float: right;
 
 }
 
@@ -313,13 +353,81 @@ textarea {
     font-size: 22px;
 }
 
-/*Search container*/
-.search-container {
-    margin-top: 5px;
-    display:flex;
-    width: 5vw;
+/*FOR SEARCH BAR*/
+.wrapper {
+    position: relative;
+    margin-top: 3px;
+    max-width: 250px;
+    height:100%;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin-left: 5px;
 }
 
+.wrapper .search-input{
+    background-color: transparent;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .search-input input{
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px 0 20px;
+    font-size: 15px;
+    box-shadow: 0 0 1px 1px#fcfcfcd7; 
+    background-color: transparent;
+    color: #fcfcfcd7;
+  }
+  .search-input.active input{
+    border-radius: 5px 5px 0 0;
+  }
+  .search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid #fcfcfcd7;
+    background-color: #24292f;
+    color: #fcfcfcd7;
+    text-decoration: none;
+  }
+  .search-input.active .autocom-box li{
+    display: block;
+  }
+  .autocom-box li:hover{
+    background: #efefef;
+    color:#24292f;
+  }
+  .search-input .icon{
+    position: absolute;
+    right: -15px;
+    top: -12px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 13px;
+    color: #fcfcfcd7;
+    cursor: pointer;
+  }
 
 
 /* RESPONSIVENESS */
