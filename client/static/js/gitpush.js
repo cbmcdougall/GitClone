@@ -23,7 +23,8 @@ function addNewPost(e) {
 }
 
 function redirectToPost(targetPost){
-    // store the post data for entry.html to receive
+    // Store the post data for entry.html to receive
     sessionStorage.journalPost = JSON.stringify(targetPost);
+    // Send user to entry page of their new post
     window.location.href = './static/entry.html';
 }
