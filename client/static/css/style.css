@@ -382,9 +382,54 @@ textarea {
     border: 1px solid #6e747a;
 }
 /*results */
-.results-container:focus-within {
-    box-shadow: 0 2px 7px 0 #6e747a;
+#results-container:focus-within {
+    border: 3px solid black;
 }
+
+.search-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0.5;
+    height: 2px;
+    background-color: #6e747a;
+    border-radius: 5px;
+    animation: searchIndicator 0.5s infinite ease-in-out;
+}
+
+@keyframes searchIndicator {
+    0% {width: 15%}
+    50% {width: 95%}
+    100% {width: 15%}
+}
+
+#results-container {
+    max-height: 250px;
+    overflow-y: auto;
+    /*visibility: hidden;
+    opacity: 0;*/
+    transition: visibility 0.1s, opacity 0.1s;
+}
+
+#results-container--visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.instant-search-results {
+    display: block;
+    color:white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    background-color: #24292f;
+}
+
+.instant-search-results:hover {
+    background-color: #6e747a;
+}
+
 
 .element-search-container .search-git {
     height: 100%;
@@ -393,9 +438,10 @@ textarea {
     border-radius: 5px;
     font-size: 15px;
     color: white;
-    background-color:#24292f;
+    background-color:transparent;
     border: none;
     outline: none;
+    flex-grow: 1;
 }
 
 .fa-search {
