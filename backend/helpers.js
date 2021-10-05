@@ -1,7 +1,7 @@
 function addPost(data, inputData){
     // Create new post data
     newId = data.length + 1;
-    postDate = new Date().toLocaleDateString()
+    postDate = new Date().toLocaleDateString('en-GB')
     newPost = {
       "id": `${newId}`,
       "title": `${inputData.title}`,
@@ -27,7 +27,7 @@ function addPost(data, inputData){
     post = data[inputData.id-1];  // Post ids start at 1
     
     // Create new comment data
-    commentDate = new Date().toLocaleDateString()
+    commentDate = new Date().toLocaleDateString('en-GB')
     newComment = {
       "body": `${inputData.body}`,
       "dateAdded": `${commentDate}`

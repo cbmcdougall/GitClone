@@ -33,7 +33,7 @@ describe('api routes', () => {
                 "title": "API testing sure is a hoot!",
                 "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!",
                 "gifUrl": "",
-                "date": new Date().toLocaleDateString(),
+                "date": new Date().toLocaleDateString('en-GB'),
                 "thumbsUp": "0",
                 "thumbsDown": "0",
                 "laughing": "0",
