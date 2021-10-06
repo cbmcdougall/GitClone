@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
     <title>GitClone</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                 </div> -->
                 <div id="menu-list">
                     <a href="../index.html" class="pNav">Home</a>
-                    <a href="../index.html" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
+                    <a href="../index.html" class="pNav" id="gitAddHeadBtn">git add<i class="fas fa-pencil-alt"></i></a>
                 </div>
                 <!-- <i id="menu-icon"class="fas fa-bars pNav" onlick="toggleMenu()"></i> -->
                 <div class="sun-moon-theme">
@@ -66,6 +66,9 @@
             <div id="journalContent">
                 <div id="journalContentText">
                     <!-- Filled in by entry.js -->
+                </div>
+                <div id="journalGif">
+                    <img alt="" id='gif'> <!--src added by entry.js -->
                 </div>
                 <div id="interaction-bar">
                     <div id="date-posted">02/10/2021</div>
@@ -105,11 +108,10 @@
             <p>GitClone, 2021</p>
             <a href="../index.html"><i class="far fa-dot-circle"></i></a>
             <p>Calum, Saja & Zerh</p>
-
-
         </div>
         <script src="./js/entry.js"></script>
         <script src="./js/theme.js"></script>
+        <script src="./js/emoji.js"></script>
         <script src="./js/gitcommit.js"></script>
 </body>
 </html>
