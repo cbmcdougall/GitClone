@@ -115,11 +115,26 @@ function showSuggestions(list){
     suggBox.innerHTML = listData;
 }
 
-//////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+//git add -header eventListener
 
+const gitAddBtn = document.querySelector("#gitAddHeadBtn");
+const msgBox = document.getElementById('message');
 
+gitAddBtn.addEventListener('click', transportPost);
 
-
+function transportPost() {
+    
+    msgBox.style.display = 'block'
+    window.location.href = '/client/index.html'
+    if (msgBox.style.display==='none') {
+        msgBox.style.display = 'block'
+    } else {
+        msgBox.style.display = 'block'
+    }
+    
+    
+}
 
 
 
