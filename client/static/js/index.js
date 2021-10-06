@@ -1,3 +1,19 @@
+var toolbarOptions = [['bold', 'italic', 'underline','strike'] ,['blockquote','code-block']];
+
+// Initialize Quill editor
+var quill = new Quill('#textArea', {
+    theme: 'snow',
+    placeholder: 'Write here...',
+    modules: {
+        toolbar:toolbarOptions
+           
+    }
+
+});
+
+// being able to access the user data 
+console.log(document.querySelector('.ql-editor').innerHTML)
+
 // Display git add form for new post
 const addPost = document.getElementById('gitAdd');
 const msgBox = document.getElementById('message');

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitClone</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/style0.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -80,7 +81,13 @@
             <input type="text" id="titlePost" required>
         </div>
         <div id="textAreaContainer">
-            <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea>
+            <!-- <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea> -->
+            
+            <!-- Create the editor container -->
+             <div id="textArea">
+                <strong>blahblah</strong>
+            </div>
+
             <p id="character-limit">Remaining characters: 400</p>
             <input type="submit" value="git push" id="gitPush">
         </div>
@@ -92,7 +99,8 @@
     </div>
 
 
-
+    
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="./static/js/index.js"></script>
     <script src="./static/js/theme.js"></script>
     <script src="./static/js/gitpush.js"></script>
@@ -103,6 +111,7 @@
             const remainingChars = 400-currentInput.length;
             document.getElementById("character-limit").textContent = `Remaining characters: ${remainingChars}`;
         }
-    </script>
+    </script>   
+
 </body>
 </html>
