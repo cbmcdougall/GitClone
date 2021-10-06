@@ -17,7 +17,7 @@ function characterLimit() {
     const remainingChars = 400-currentInput.length;
     
     const charLimitText = document.getElementById("character-limit")
-    const colour = remainingChars >= 0 ? 'green': 'red'
+    //const colour = remainingChars >= 0 ? 'green': 'red'
     charLimitText.textContent = `Remaining characters: ${remainingChars}`;
     charLimitText.style.color = colour
 }
