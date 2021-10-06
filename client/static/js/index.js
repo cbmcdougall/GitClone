@@ -19,7 +19,7 @@ function characterLimit() {
     const charLimitText = document.getElementById("character-limit")
     //const colour = remainingChars >= 0 ? 'green': 'red'
     charLimitText.textContent = `Remaining characters: ${remainingChars}`;
-    charLimitText.style.color = colour
+    // charLimitText.style.color = colour
 }
 
 

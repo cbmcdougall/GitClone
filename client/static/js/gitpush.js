@@ -6,11 +6,10 @@ function addNewPost(e) {
     e.preventDefault();
     // Get the form data
     const postTitle = e.target.titlePost.value;
+    const postText = document.querySelector('.ql-editor').innerHTML;
     const postGifLink = e.target.gifLink.value;
 
-    const postText = document.querySelector('.ql-editor').innerHTML;
-    console.log(postText);
-    const post = {title: `${postTitle}`,gifLink: `${postGifLink}`, text: `${postText}`, gifUrl: ""};
+    const post = {title: `${postTitle}`, text: `${postText}`, gifUrl: `${postGifLink}`};
    
     // Make PUT request to server
     fetch("https://git-clone-blog.herokuapp.com/gitpush", {
