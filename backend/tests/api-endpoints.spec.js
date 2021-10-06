@@ -121,4 +121,24 @@ describe('api routes', () => {
             };
         });
     });
+
+    describe("DELETE reqeusts successfully remove specified post/comment", () => {
+        test("DELETE /rm/:id successfully removes post #id and updates ids", async () => {
+            this.testPost = {
+                "title": "API testing sure is a hoot!",
+                "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!",
+                "gifUrl": ""
+            };
+            const deletePost = await request(api).delete('/rm/2');
+            // const deletePost = {status: 200};
+            if (deletePost.status === 200) {
+                // post has been deleted
+                const checkPosts = await request(api).get('/pushes');
+                const posts = checkPosts.body;
+                expect(posts[posts.length-1].id).toBe(posts.length);
+            } else {
+                throw new Error(`Status code ${deletePost.status}: ${putRequest.text}`);
+            };
+        })
+    });
 });

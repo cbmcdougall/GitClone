@@ -54,8 +54,20 @@ function adjustEmoji(emoji, adjust){
     return [status, message, emoji];
 }
 
+function deletePost(data, id){
+  const postIndex = id - 1;
+  // Delete the specified post
+  data.splice(postIndex, 1);
+  // Update IDs of posts later than the deleted post
+  for (let i=postIndex; i < data.length; i++){
+    data[i].id = i+1;
+  }
+  return `Post #${id} successfully deleted`
+}
+
 module.exports = {
       addPost,
       addComment,
-      adjustEmoji
+      adjustEmoji,
+      deletePost
 }
