@@ -1,0 +1,1 @@
+const post = JSON.parse(sessionStorage.journalPost);

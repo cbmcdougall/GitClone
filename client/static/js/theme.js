@@ -12,10 +12,16 @@ moonIcon.addEventListener('click', () => {
 ////////////////////////////////////////////////
 ///Search bar
 
-let suggestions = [
-    "ant", "bird", "cat", "dog", "elephant", "fish", "goat", "horse", "igloo", "jackal", "kangeroo", "lizard", "monkey", "nobody", "octopus",
-    "pig", "queen", "rat", "snake", "umbrella", "venom", "whale", "xylophone", "yacht", "zebra", "animal", "bat", "banana", "blood", "beautiful"
-]
+let suggestions;
+fetch("https://git-clone-blog.herokuapp.com/pushes")
+    .then(resp => resp.json())
+    .then(data => fillSuggestions(data, suggestions))
+    .catch(err => console.log(err));
+
+function fillSuggestions(data,suggestions){
+        suggestions = data.map(post => {return post.title})
+}
+
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
@@ -28,14 +34,20 @@ inputBox.onkeyup = (e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;
-            linkTag.setAttribute("href", webLink);
+            result = data.filter(post => {
+            userData.toLocaleLowerCase() === post.title.toLocaleLowerCase()
+            })
+            sessionStorage.journalPost = JSON.stringify(result);
+            linkTag.setAttribute("href", '.static/entry.html');
             linkTag.click();
+            // webLink = `https://www.google.com/search?q=${userData}`; //>>>>>////CHANGE THIS TO INDVIDIUAL LINK
+            // linkTag.setAttribute("href", webLink);
+            // linkTag.click();
         }
-        emptyArray = suggestions.filter((data)=>{
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
+        // emptyArray = suggestions.filter((data)=>{
+        //     //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+        //     return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        // });
         emptyArray = emptyArray.map((data)=>{
             // passing return data inside li tag
             return data = `<li>${data}</li>`;
@@ -72,34 +84,7 @@ function showSuggestions(list){
     suggBox.innerHTML = listData;
 }
 
-// searchBar.onkeyup = (e) => {
-//     let userData = e.target.value; //user enters data
-//     let emptyArray = [];
-//     if(userData){
-//         emptyArray = testArray.filter((data)=> {
-//             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-//         });
-//         emptyArray = emptyArray.map((data)=> {
-//             return data = '<a href="#">' + data + '</a>';
-//         });
-//         console.log(emptyArray);
-//         resultsBox.classList.add("active");
-//     } else {
-
-//     }
-//     showSuggestions(emptyArray);
-// }
-
-// function showSuggestions(list){
-//     let listData;
-//     if(!list.length) {
-
-//     } else {
-//         listData = list.join()
-//     }
-//     resultsBox.innerHTML = listData;
-
-// }
+//////////////////////////////////////////
 
 
 

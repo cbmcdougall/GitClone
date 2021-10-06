@@ -14,6 +14,8 @@ function showMessageBox() {
     }
 }
 
+
+
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
