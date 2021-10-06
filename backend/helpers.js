@@ -20,9 +20,9 @@ function addPost(data, inputData){
     
     // Return the added data
     return newPost;
-  }
+}
   
-  function addComment(data, inputData){
+function addComment(data, inputData){
     // Find the relevant post
     post = data[inputData.id-1];  // Post ids start at 1
     
@@ -37,9 +37,9 @@ function addPost(data, inputData){
     post.comments.push(newComment); // Note change is local
     
     return newComment;
-  }
+}
   
-  function adjustEmoji(emoji, adjust){
+function adjustEmoji(emoji, adjust){
     let status = 200;
     if (adjust==="add"){
       emoji++;
@@ -52,10 +52,10 @@ function addPost(data, inputData){
       status = 400;
     }
     return [status, message, emoji];
-  }
+}
 
-  module.exports = {
+module.exports = {
       addPost,
       addComment,
       adjustEmoji
-  }
+}
