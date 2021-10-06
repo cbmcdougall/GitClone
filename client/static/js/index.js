@@ -11,6 +11,32 @@ var quill = new Quill('#textArea', {
 
 });
 
+
+// const quill = new Quill("#editor", {
+//     modules: {
+//       toolbar: toolBaroptions,
+//     },
+//     theme: "snow",
+//   });
+  
+//   const charLimit = 400;
+//   const limitSpan = document.getElementById("limit-span");
+//   let isAllowedToPost = true;
+  
+//   quill.on("text-change", function (delta, old, source) {
+//     let numChars = quill.getLength();
+//     limitSpan.textContent = `Character Limit: ${numChars - 1}/${charLimit}`;
+//     if (numChars > charLimit) {
+//       limitSpan.style.color = "red";
+//       isAllowedToPost = false;
+//     } else {
+//       limitSpan.style.color = "green";
+//       isAllowedToPost = true;
+//     }
+//   });
+
+
+
 // being able to access the user data 
 console.log(document.querySelector('.ql-editor').innerHTML)
 

@@ -119,5 +119,5 @@ h1 {
 }
 
 #textArea {
-    min-height: 10vh;
+    height: auto;
 }
