@@ -35,7 +35,7 @@ body {
 
 /*for posts*/
 #message {
-    height: 300px;
+    min-height: 475px;
     margin: 10px 120px;
     padding: 10px 10px;
     margin-bottom: 30px;
@@ -121,3 +121,14 @@ h1 {
 #textArea {
     height: auto;
 }
+
+#gif-searcher {
+    text-align:center;
+}
+
+#gif-query, #gif-link {
+    height: 20px;
+    width: 200px;
+    
+}
+

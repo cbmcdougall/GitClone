@@ -9,38 +9,12 @@ var quill = new Quill('#textArea', {
     }
 });
 
-
-// const quill = new Quill("#editor", {
-//     modules: {
-//       toolbar: toolBaroptions,
-//     },
-//     theme: "snow",
-//   });
-  
-//   const charLimit = 400;
-//   const limitSpan = document.getElementById("limit-span");
-//   let isAllowedToPost = true;
-  
-//   quill.on("text-change", function (delta, old, source) {
-//     let numChars = quill.getLength();
-//     limitSpan.textContent = `Character Limit: ${numChars - 1}/${charLimit}`;
-//     if (numChars > charLimit) {
-//       limitSpan.style.color = "red";
-//       isAllowedToPost = false;
-//     } else {
-//       limitSpan.style.color = "green";
-//       isAllowedToPost = true;
-//     }
-//   });
-
-
-
 // being able to access the user data 
 console.log(document.querySelector('.ql-editor').innerHTML)
 
 function characterLimit() {
     const currentInput = quill.getText();
-    const remainingChars = 401-currentInput.length;
+    const remainingChars = 400-currentInput.length;
     
     const charLimitText = document.getElementById("character-limit")
     const colour = remainingChars >= 0 ? 'green': 'red'
@@ -51,7 +25,10 @@ function characterLimit() {
 
 quill.on('text-change', function(delta, oldDelta, source) {
     if (source == 'user') {
-      characterLimit();
+    if (quill.getLength() > 399) {
+        quill.deleteText(399, quill.getLength());
+      }
+    characterLimit();
     }
   });
 
@@ -71,6 +48,38 @@ function showMessageBox() {
         msgBox.style.display = 'block'
     }
 }
+
+//Gif searcher code
+function delay(callback, ms) {
+    var timer = 0;
+    return function() {
+      var context = this, args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        callback.apply(context, args);
+      }, ms || 0);
+    };
+  }
+  
+
+const gifSearch = document.getElementById('gifQuery')
+const gifLink = document.getElementById('gifLink')
+const gifImg = document.getElementById('gif')
+
+gifSearch.addEventListener('keyup', delay(function (e) {
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=acjbCkgI3OtN7HNIvA9Pgcfl1I87HOdH&q=${this.value}&limit=1&offset=0&rating=g&lang=en`)
+    .then(data => data.json())
+    .then(data => {
+        console.log(data)     
+        let link = data.data[0].images.fixed_height_small.url;
+        console.log(link);
+        gifImg.src=link;
+        gifLink.value=link;
+    })
+
+}, 1000))
+
+
 
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")

@@ -81,12 +81,27 @@
             <input type="text" id="titlePost" required>
         </div>
         <div id="textAreaContainer">
-            <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea>
+            <!-- <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea> -->
             <!-- Create the editor container -->
             <div id="textArea">
-            </div>
+        </div>
 
             <p id="character-limit">Remaining characters: 400</p>
+
+    
+        <div id='gif-searcher'>
+            <label for="gifQuery">Search for gif:</label> <br>
+            <input type="text" id='gifQuery' name='gifQuery'> 
+            <br> 
+            <br>
+            <label for="gifLink">Gif link:</label> <br>
+            <input type="text" id='gifLink' name='gifLink' disabled>
+            <br>
+            <br>
+            <img src="https://media4.giphy.com/media/687qS11pXwjCM/100.gif?cid=cee99923wn8onusycp3qqhjjkc61tkctgxg2ejhvs6lhar64&rid=100.gif&ct=g" alt="" id='gif'>
+        </div>
+     
+
             <input type="submit" value="git push" id="gitPush">
         </div>
     </form>
@@ -97,7 +112,8 @@
     </div>
 
 
-    
+
+
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="./static/js/index.js"></script>
     <script src="./static/js/theme.js"></script>
