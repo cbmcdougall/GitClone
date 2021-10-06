@@ -14,7 +14,8 @@ const commentSection = document.getElementById("all-comments");
 journalTitle.textContent = post.title;
 journalID.textContent = `#${post.id}`;
 // Post content
-journalContent.children[0].textContent = post.text;
+// journalContent.children[0].textContent = post.text;
+journalContent.innerHTML = post.text;
 // Interaction bar
 journalDate.textContent = post.date;
 journalNumComments.textContent = post.comments.length;
