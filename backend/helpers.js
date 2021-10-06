@@ -1,8 +1,8 @@
 function addPost(data, inputData){
     // Create new post data
-    newId = data.length + 1;
-    postDate = new Date().toLocaleDateString('en-GB')
-    newPost = {
+    const newId = data.length + 1;
+    const postDate = new Date().toLocaleDateString('en-GB')
+    const newPost = {
       "id": `${newId}`,
       "title": `${inputData.title}`,
       "text": `${inputData.text}`,
@@ -24,11 +24,13 @@ function addPost(data, inputData){
   
 function addComment(data, inputData){
     // Find the relevant post
-    post = data[inputData.id-1];  // Post ids start at 1
+    const post = data[inputData.id-1];  // Post ids start at 1
     
     // Create new comment data
-    commentDate = new Date().toLocaleDateString('en-GB')
+    const commentDate = new Date().toLocaleDateString('en-GB')
+    const commentId = post.comments.length + 1;
     newComment = {
+      "id": `${commendId}`,
       "body": `${inputData.body}`,
       "dateAdded": `${commentDate}`
     }
@@ -41,6 +43,7 @@ function addComment(data, inputData){
   
 function adjustEmoji(emoji, adjust){
     let status = 200;
+    let message;
     if (adjust==="add"){
       emoji++;
       message = 'Emoji has been added';
@@ -54,8 +57,8 @@ function adjustEmoji(emoji, adjust){
     return [status, message, emoji];
 }
 
-function deletePost(data, id){
-  const postIndex = id - 1;
+function deletePost(data, postId, id){
+  const postIndex = postId - 1;
   // Delete the specified post
   data.splice(postIndex, 1);
   // Update IDs of posts later than the deleted post
@@ -65,9 +68,22 @@ function deletePost(data, id){
   return `Post #${id} successfully deleted`
 }
 
+function deleteComment(data, postId, id){
+  const postIndex = postId - 1;
+  const commentIndex = id - 1;
+  // Delete the specified comment
+  const post = data[postIndex];
+  post.comments.splice(commentIndex, 1);
+  // Update IDs of later comments
+  for (let i=commentIndex; i < post.comments.length; i++){
+    post.comments[i].id = i+1;
+  }
+}
+
 module.exports = {
       addPost,
       addComment,
       adjustEmoji,
-      deletePost
+      deletePost,
+      deleteComment
 }

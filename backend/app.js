@@ -89,4 +89,17 @@ app.delete('/rm/:id', (req, res) => {
   }
 })
 
+// Delete comment of given id
+app.delete('/rm/:postId/comment/:id', (req, res) => {
+  try {
+    // Get Id of post to delete
+    const postId = req.params.postId;
+    // Delete the post
+    const result = helpers.deleteComment(data, postId, id);
+    res.status(200).send(result)
+  } catch (err) {
+    res.status(err.status || 500).send(`Unable to complete request, ${err}`);
+  }
+})
+
 module.exports = app;
