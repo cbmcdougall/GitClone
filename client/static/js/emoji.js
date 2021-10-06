@@ -1,7 +1,4 @@
-
-
 let thumbsUpEmoji, laughEmoji, thumbsDownEmoji;
-
 const emojis = document.querySelector('#emojis');
 
 
@@ -19,30 +16,59 @@ let hasUserClickedTDown = false;
 let hasUserClickedLaughing = false;
 
 function incrementCount(emoji) {
-    console.log(hasUserClickedTUp)
+    
   if (emoji === "emoji-thumbs-up" && !hasUserClickedTUp) {
     hasUserClickedTUp = true;
     let emojiCount = parseInt(thumbsUpEmoji.children[1].textContent) // Stores the current text content as an integer
     emojiCount++ // Increments it by 1
     thumbsUpEmoji.children[1].textContent = emojiCount.toString() // Stores it back in the html
-  } else {
+  } else if(emoji === "emoji-thumbs-up" && !hasUserClickedTUp) {
     hasUserClickedTUp = false;
     thumbsUpEmoji.children[1].textContent--
-  }
-  if (emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
+  } else if(emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
     hasUserClickedTDown = true;
-    changeInnerHTML(thumbsDownEmoji);
-    let emojiArray = emojis;
-    emojiArray[6] += 1;
-    sendEmojiUpdate(emojiArray);
-  }
-  if (emoji === "emoji-laughing" && !hasUserClickedLaughing) {
+    let emojiCount = parseInt(thumbsDownEmoji.children[1].textContent)
+    emojiCount++
+    thumbsDownEmoji.children[1].textContent = emojiCount.toString()
+  } else if(emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
+    hasUserClickedTDown = false;
+    thumbsDownEmoji.children[1].textContent--
+  } else if(emoji === "emoji-laughing" && !hasUserClickedLaughing) {
     hasUserClickedLaughing = true;
-    changeInnerHTML(laughEmoji);
-    let emojiArray = emojis;
-    emojiArray[9] += 1;
-    sendEmojiUpdate(emojiArray);
-  }
+    let emojiCount = parseInt(laughEmoji.children[1].textContent)
+    emojiCount++ // Increments it by 1
+    laughEmoji.children[1].textContent = emojiCount.toString()
+  } else if(emoji === "emoji-laughing" && !hasUserClickedLaughing) {
+    hasUserClickedLaughing = false;
+    laughEmoji.children[1].textContent--
+  }; 
+
+
+  // if(emoji === "emoji-thumbs-up" && !hasUserClickedTUp) {
+  //   hasUserClickedTUp = true;
+  //   let emojiCount = parseInt(thumbsUpEmoji.children[1].textContent)
+  //   emojiCount++ // Increments it by 1
+  //   thumbsUpEmoji.children[1].textContent = emojiCount.toString() 
+  // } else if (emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
+  //   hasUserClickedTDown = true;
+  //   let emojiCount = parseInt(thumbsDownEmoji.children[1].textContent)
+  //   emojiCount++
+  //   thumbsDownEmoji.children[1].textContent = emojiCount.toString()
+  // } else if (emoji === "emoji-laughing" && !hasUserClickedLaughing) {
+  //   hasUserClickedLaughing = true;
+  //   let emojiCount = parseInt(laughEmoji.children[1].textContent)
+  //   emojiCount++ // Increments it by 1
+  //   laughEmoji.children[1].textContent = emojiCount.toString() 
+  // } else if(emoji === "emoji-thumbs-up" && !hasUserClickedTUp) {
+  //   hasUserClickedTUp = false;
+  //   thumbsUpEmoji.children[1].textContent--
+  // } else if (emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
+  //   hasUserClickedTDown = false;
+  //   thumbsDownEmoji.children[1].textContent--
+  // } else if (emoji === "emoji-laughing" && !hasUserClickedLaughing) {
+  //   hasUserClickedLaughing = false;
+  //   laughEmoji.children[1].textContent--
+  // };
 }
 
 function changeInnerHTML(emojiElement) {
