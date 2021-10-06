@@ -76,4 +76,17 @@ app.put('/gitpush/:emoji', (req, res) => {
   }
 })
 
+// Delete post of given id
+app.delete('/rm/:id', (req, res) => {
+  try {
+    // Get Id of post to delete
+    const postId = req.params.id;
+    // Delete the post
+    const result = helpers.deletePost(data, postId);
+    res.status(200).send(result)
+  } catch (err) {
+    res.status(err.status || 500).send(`Unable to complete request, ${err}`);
+  }
+})
+
 module.exports = app;
