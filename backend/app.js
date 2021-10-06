@@ -77,7 +77,7 @@ app.put('/gitpush/:emoji', (req, res) => {
 })
 
 // Delete post of given id
-app.delete('/rm/:id', (req, res) => {
+app.delete('/gitrm/:id', (req, res) => {
   try {
     // Get Id of post to delete
     const postId = req.params.id;
@@ -90,12 +90,13 @@ app.delete('/rm/:id', (req, res) => {
 })
 
 // Delete comment of given id
-app.delete('/rm/:postId/comment/:id', (req, res) => {
+app.delete('/gitrm/:postId/comment/:id', (req, res) => {
   try {
     // Get Id of post to delete
     const postId = req.params.postId;
+    const commentId = req.params.id;
     // Delete the post
-    const result = helpers.deleteComment(data, postId, id);
+    const result = helpers.deleteComment(data, postId, commentId);
     res.status(200).send(result)
   } catch (err) {
     res.status(err.status || 500).send(`Unable to complete request, ${err}`);

@@ -61,6 +61,7 @@ describe('api routes', () => {
                 "id": "2"
             };
             this.expectedResponse = {
+                "id": "1",
                 "body": `${this.testComment.body}`,
                 "dateAdded": new Date().toLocaleDateString()
             };
@@ -123,13 +124,8 @@ describe('api routes', () => {
     });
 
     describe("DELETE reqeusts successfully remove specified post/comment", () => {
-        test("DELETE /rm/:id successfully removes post #id and updates ids", async () => {
-            this.testPost = {
-                "title": "API testing sure is a hoot!",
-                "text": "You ever just feel an intense thrill writing tests for your API endpoints? I sure do!",
-                "gifUrl": ""
-            };
-            const deletePost = await request(api).delete('/rm/2');
+        test("DELETE /gitrm/2 successfully removes post #2 and updates ids", async () => {
+            const deletePost = await request(api).delete('/gitrm/2');
             // const deletePost = {status: 200};
             if (deletePost.status === 200) {
                 // post has been deleted
@@ -137,8 +133,34 @@ describe('api routes', () => {
                 const posts = checkPosts.body;
                 expect(posts[posts.length-1].id).toBe(posts.length);
             } else {
-                throw new Error(`Status code ${deletePost.status}: ${putRequest.text}`);
+                throw new Error(`Status code ${deletePost.status}: ${deletePost.text}`);
             };
-        })
+        });
+        test("DELETE /rm/1/comment/1 successfully removes comment #1 from post #1 and updates ids", async () => {
+            const testComment = {
+                "body": "Adding test comment",
+                "id": "1"
+            };
+            // add test comment
+            const putRequest = await request(api)
+                .put('/gitpush/comment')
+                .send(testComment)
+            if (putRequest.status === 201) {
+                // delete the first comment on the same post
+                const deleteComment = await request(api)
+                    .delete(`/gitrm/${testComment.id}/comment/1`)
+                if (deleteComment.status === 200) {
+                    // check if comment has been deleted and ids updated
+                    const checkPosts = await request(api).get('/pushes');
+                    const comments = checkPosts.body[testComment.id-1].comments;
+                    expect(comments.length).toBe(1);
+                    expect(comments[0].id).toBe(1);
+                } else {
+                    throw new Error(`Delete failed: Status code ${deleteComment.status}: ${deleteComment.text}`);
+                };
+            } else {
+                throw new Error(`Put failed: Status code ${putRequest.status}: ${putRequest.text}`);
+            };
+        });
     });
 });

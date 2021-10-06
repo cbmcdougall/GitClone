@@ -30,7 +30,7 @@ function addComment(data, inputData){
     const commentDate = new Date().toLocaleDateString('en-GB')
     const commentId = post.comments.length + 1;
     newComment = {
-      "id": `${commendId}`,
+      "id": `${commentId}`,
       "body": `${inputData.body}`,
       "dateAdded": `${commentDate}`
     }
