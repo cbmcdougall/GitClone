@@ -19,7 +19,7 @@ function characterLimit() {
     const charLimitText = document.getElementById("character-limit")
     //const colour = remainingChars >= 0 ? 'green': 'red'
     charLimitText.textContent = `Remaining characters: ${remainingChars}`;
-    charLimitText.style.color = colour
+    // charLimitText.style.color = colour
 }
 
 
@@ -84,27 +84,27 @@ gifSearch.addEventListener('keyup', delay(function (e) {
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
-  .then(data => renderPosts(data.slice(-5).reverse()))
+  .then(posts => renderPosts(posts.slice(-5).reverse()))
   .catch(err => console.log(err));
 
-function renderPosts(data){
+function renderPosts(posts){
     const pushes = document.getElementById("threads");
     
-    data.forEach( post=> {
+    posts.forEach(post => {
         // Create a container for the post
         const pushContainer = document.createElement("div");
         pushContainer.setAttribute("id", "fiveDivs");
 
         // Add post title
-        const postLink = document.createElement("A");
         const postTitle = document.createElement("h1");
         postTitle.setAttribute("id", "journalTitle");
+        
+        // Set the post title as link to post entry
+        const postLink = document.createElement("A");
         postLink.style.textDecoration = "none";
-
-        // Set the post title as link to post
         postLink.setAttribute("href", "./static/entry.html");
         postLink.addEventListener("click", () => {
-            // store the post data for entry.html to receive
+            // Store the post data for entry.js to render
             sessionStorage.journalPost = JSON.stringify(post);
         })
         
@@ -116,7 +116,7 @@ function renderPosts(data){
         const pushDate = document.createElement("P");
         pushDate.setAttribute("id", "date-posted");
         
-        // Post comments
+        // Number of comments
         const pushComments = document.createElement("P");
         pushComments.setAttribute("id", "num-of-comments");
         
@@ -124,19 +124,19 @@ function renderPosts(data){
         const emojiContainer = document.createElement("div");
         emojiContainer.setAttribute("id", "emojis");
         emojiContainer.className = "emojis";
-
+        // Thumbs Up
         const emojiThumbsUp = document.createElement("div");
         emojiThumbsUp.setAttribute("id", "emoji-thumbs-up");
         const thumbsUp = document.createElement("I");
         thumbsUp.classList = "fas fa-thumbs-up";
         const thumbsUpNumber = document.createElement("span");
-        
+        // Thumbs Down
         const emojiThumbsDown = document.createElement("div");
         emojiThumbsDown.setAttribute("id", "emoji-thumbs-down");
         const thumbsDown = document.createElement("I");
         thumbsDown.classList = "fas fa-thumbs-down";
         const thumbsDownNumber = document.createElement("span");
-
+        // Laughing
         const emojiLaughing = document.createElement("div");
         emojiLaughing.setAttribute("id", "emoji-laughing");
         const laughing = document.createElement("I");
@@ -153,7 +153,7 @@ function renderPosts(data){
         
         // Insert elements to the DOM
         postLink.appendChild(postTitle);
-
+        
         emojiThumbsUp.appendChild(thumbsUp);
         emojiThumbsUp.appendChild(thumbsUpNumber);
         emojiThumbsDown.appendChild(thumbsDown);

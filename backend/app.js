@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const helpers = require('./helpers');
+const helpers = require('./helpers'); // helper functions
 
+// Define the server
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Retrieve the data file
+// Retrieve the data file. Any changes made to "data" will be made to this variable's stored data, not the original data.json
 const data = require('./data.json');
 
 // Test home route
@@ -52,8 +53,10 @@ app.put('/gitpush/comment', (req, res) => {
 app.put('/gitpush/:emoji', (req, res) => {
   try {
     const userRequest = req.body;
-    const postIndex = userRequest.id - 1;
     const emoji = req.params.emoji;
+    // Index of each post in the data is 1 less than their id
+    const postIndex = userRequest.id - 1;
+    // Check what emoji is to be adjusted
     switch (emoji) {
       case "thumbsUp":
         emojiToAdjust = data[postIndex].thumbsUp
@@ -68,9 +71,40 @@ app.put('/gitpush/:emoji', (req, res) => {
         res.status(404).send("Please specify /thumbsUp, /thumbsDown, or /laughing in fetch url")
         return;
     };
+    // Get new emoji count
     const response = helpers.adjustEmoji(emojiToAdjust, userRequest.adjust);
+    // Store new emoji count
     data[postIndex][emoji] = response[2];
+    // Rest of response is the status and message to send back in server response
     res.status(response[0]).send(response[1]);
+  } catch (err) {
+    res.status(err.status || 500).send(`Unable to complete request, ${err}`);
+  }
+})
+
+// Delete post of given id
+app.delete('/gitrm/:id', (req, res) => {
+  try {
+    // Get Id of post to delete
+    const postId = req.params.id;
+    // Delete the post
+    const result = helpers.deletePost(data, postId);
+    res.status(200).send(result)
+  } catch (err) {
+    res.status(err.status || 500).send(`Unable to complete request, ${err}`);
+  }
+})
+
+// Delete comment of given id
+app.delete('/gitrm/:postId/comment/:id', (req, res) => {
+  try {
+    // Get id of post containing comment to delete
+    const postId = req.params.postId;
+    // Get id of comment to delete
+    const commentId = req.params.id;
+    // Delete the comment
+    const result = helpers.deleteComment(data, postId, commentId);
+    res.status(200).send(result)
   } catch (err) {
     res.status(err.status || 500).send(`Unable to complete request, ${err}`);
   }
