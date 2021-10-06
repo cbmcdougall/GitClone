@@ -23,7 +23,7 @@ journalThumbsDown.children[1].textContent = post.thumbsDown;
 journalLaughing.children[1].textContent = post.laughing;
 // Comments section
 if (post.comments.length){
-    post.comments.forEach(comment => {
+    post.comments.reverse().forEach(comment => {
         const bodyContainer = document.createElement("P");
         const dateContainer = document.createElement("div");
         bodyContainer.className = "comment-body";

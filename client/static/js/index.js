@@ -33,7 +33,7 @@ function showMessageBox() {
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
-  .then(data => renderPosts(data.slice(-5)))
+  .then(data => renderPosts(data.slice(-5).reverse()))
   .catch(err => console.log(err));
 
 function renderPosts(data){
