@@ -1,3 +1,38 @@
+var toolbarOptions = [['bold', 'italic', 'underline','strike'] ,['blockquote','code-block']];
+
+// Initialize Quill editor
+var quill = new Quill('#textArea', {
+    theme: 'snow',
+    placeholder: 'Write here...',
+    modules: {
+        toolbar:toolbarOptions
+    }
+});
+
+// being able to access the user data 
+console.log(document.querySelector('.ql-editor').innerHTML)
+
+function characterLimit() {
+    const currentInput = quill.getText();
+    const remainingChars = 400-currentInput.length;
+    
+    const charLimitText = document.getElementById("character-limit")
+    //const colour = remainingChars >= 0 ? 'green': 'red'
+    charLimitText.textContent = `Remaining characters: ${remainingChars}`;
+    charLimitText.style.color = colour
+}
+
+
+quill.on('text-change', function(delta, oldDelta, source) {
+    if (source == 'user') {
+    if (quill.getLength() > 399) {
+        quill.deleteText(399, quill.getLength());
+      }
+    characterLimit();
+    }
+  });
+
+
 // Display git add form for new post
 const addPost = document.getElementById('gitAdd');
 const msgBox = document.getElementById('message');
@@ -14,12 +49,42 @@ function showMessageBox() {
     }
 }
 
+//Gif searcher code
+function delay(callback, ms) {
+    var timer = 0;
+    return function() {
+      var context = this, args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        callback.apply(context, args);
+      }, ms || 0);
+    };
+  }
+  
+
+const gifSearch = document.getElementById('gifQuery')
+const gifLink = document.getElementById('gifLink')
+const gifImg = document.getElementById('gif')
+
+gifSearch.addEventListener('keyup', delay(function (e) {
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=acjbCkgI3OtN7HNIvA9Pgcfl1I87HOdH&q=${this.value}&limit=1&offset=0&rating=g&lang=en`)
+    .then(data => data.json())
+    .then(data => {
+        console.log(data)     
+        let link = data.data[0].images.fixed_height_small.url;
+        console.log(link);
+        gifImg.src=link;
+        gifLink.value=link;
+    })
+
+}, 1000))
+
 
 
 // Display 5 most recent posts, redirect to entry.html for the post clicked
 fetch("https://git-clone-blog.herokuapp.com/pushes")
   .then(resp => resp.json())
-  .then(data => renderPosts(data.slice(-5)))
+  .then(data => renderPosts(data.slice(-5).reverse()))
   .catch(err => console.log(err));
 
 function renderPosts(data){

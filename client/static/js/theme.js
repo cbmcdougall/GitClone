@@ -132,10 +132,6 @@ function showSuggestions(list){
 
 
 
-
-
-
-
 ////for RESPONSIVENESS
 //menu-list
 // const menuList = document.querySelector('#menu-list');

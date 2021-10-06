@@ -1,13 +1,17 @@
 // On form submission, adds new blog post
-const inputForm = document.getElementById("message");
-inputForm.addEventListener("submit", addNewPost);
+const postForm = document.getElementById("message");
+postForm.addEventListener("submit", addNewPost);
 
 function addNewPost(e) {
     e.preventDefault();
     // Get the form data
     const postTitle = e.target.titlePost.value;
-    const postText = e.target.textArea.value;
-    const post = {title: `${postTitle}`, text: `${postText}`, gifUrl: ""};
+    const postGifLink = e.target.gifLink.value;
+
+    const postText = document.querySelector('.ql-editor').innerHTML;
+    console.log(postText);
+    const post = {title: `${postTitle}`,gifLink: `${postGifLink}`, text: `${postText}`, gifUrl: ""};
+   
     // Make PUT request to server
     fetch("https://git-clone-blog.herokuapp.com/gitpush", {
         method: 'PUT',

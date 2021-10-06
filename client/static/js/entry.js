@@ -14,7 +14,7 @@ const commentSection = document.getElementById("all-comments");
 journalTitle.textContent = post.title;
 journalID.textContent = `#${post.id}`;
 // Post content
-journalContent.children[0].textContent = post.text;
+journalContent.innerHTML = post.text;
 // Interaction bar
 journalDate.textContent = post.date;
 journalNumComments.textContent = post.comments.length;
@@ -23,7 +23,7 @@ journalThumbsDown.children[1].textContent = post.thumbsDown;
 journalLaughing.children[1].textContent = post.laughing;
 // Comments section
 if (post.comments.length){
-    post.comments.forEach(comment => {
+    post.comments.reverse().forEach(comment => {
         const bodyContainer = document.createElement("P");
         const dateContainer = document.createElement("div");
         bodyContainer.className = "comment-body";
