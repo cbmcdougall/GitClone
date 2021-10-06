@@ -1,6 +1,6 @@
 // On form submission, adds new blog post
-const inputForm = document.getElementById("message");
-inputForm.addEventListener("submit", addNewPost);
+const postForm = document.getElementById("message");
+postForm.addEventListener("submit", addNewPost);
 
 function addNewPost(e) {
     e.preventDefault();
