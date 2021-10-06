@@ -6,9 +6,7 @@ var quill = new Quill('#textArea', {
     placeholder: 'Write here...',
     modules: {
         toolbar:toolbarOptions
-           
     }
-
 });
 
 
@@ -39,6 +37,24 @@ var quill = new Quill('#textArea', {
 
 // being able to access the user data 
 console.log(document.querySelector('.ql-editor').innerHTML)
+
+function characterLimit() {
+    const currentInput = quill.getText();
+    const remainingChars = 401-currentInput.length;
+    
+    const charLimitText = document.getElementById("character-limit")
+    const colour = remainingChars >= 0 ? 'green': 'red'
+    charLimitText.textContent = `Remaining characters: ${remainingChars}`;
+    charLimitText.style.color = colour
+}
+
+
+quill.on('text-change', function(delta, oldDelta, source) {
+    if (source == 'user') {
+      characterLimit();
+    }
+  });
+
 
 // Display git add form for new post
 const addPost = document.getElementById('gitAdd');

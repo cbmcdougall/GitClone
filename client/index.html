@@ -83,7 +83,7 @@
         <div id="textAreaContainer">
             <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea>
             <!-- Create the editor container -->
-             <div id="textArea">
+            <div id="textArea">
             </div>
 
             <p id="character-limit">Remaining characters: 400</p>
@@ -102,14 +102,6 @@
     <script src="./static/js/index.js"></script>
     <script src="./static/js/theme.js"></script>
     <script src="./static/js/gitpush.js"></script>
-    <script>
-        // Wouldn't work in external .js script so doing here
-        function characterLimit() {
-            const currentInput = document.getElementById("textArea").value;
-            const remainingChars = 400-currentInput.length;
-            document.getElementById("character-limit").textContent = `Remaining characters: ${remainingChars}`;
-        }
-    </script>   
 
 </body>
 </html>
