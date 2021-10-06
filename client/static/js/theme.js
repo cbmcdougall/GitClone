@@ -76,7 +76,7 @@ function fillSuggestions(data){
                 })
                 sessionStorage.journalPost = JSON.stringify(result[0]);
                 const path = window.location.pathname;
-                if (path==="/client/index.html"){
+                if (path.endsWith("/index.html")){
                     // We're currently on homepage
                     window.location.href = "./static/entry.html"
                 } else {
@@ -132,41 +132,4 @@ function showSuggestions(list){
 
 
 
-////for RESPONSIVENESS
-//menu-list
-// const menuList = document.querySelector('#menu-list');
-
-// menuList.style.maxHeight = "0px";
-
-// function toggleMenu() {
-//     if(menuList.style.maxHeight == "0px") {
-//         menuList.style.maxHeight = "100px"
-//     } else {
-//         menuList.style.maxHeight = "0px"
-//     }
-// }
-
-
-
-//////////////////////////////////////////////////
-//Emoji reactions//
-// const thumbsUp = document.querySelector(".fa-thumbs-up");
-// const thumbsDown = document.querySelector(".fa-thumbs-down");
-// const laughEmoji = document.querySelector(".fa-grin-squint-tears");
-
-// const tUpNum = document.getElementsByClassName('tUpNum');
-// const tDownNum = document.getElementsByClassName('tDownNum');
-// const laughNum = document.getElementsByClassName('laughNum');
-
-// thumbsUp.addEventListener('click', () => {
-//     tUpNum.value = parseInt(tUpNum.value) + 1;
-// });
-
-
-// thumbsDown.addEventListener('click', () => incrementCount("dislikeBtn"));
-// laughEmoji.addEventListener('click', () => incrementCount("laughing"));
-
-// const hasUserClickedLikeBtn = false;
-// const hasUserClickedDislikeBtn = false;
-// const hasUserClickedLaughing = false;
 
