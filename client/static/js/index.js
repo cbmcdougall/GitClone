@@ -178,4 +178,6 @@ function renderPosts(posts){
 
         pushes.appendChild(pushContainer);
     })
+    // Allow scrolling down the page
+    document.body.style.overflow = 'visible';
 }
