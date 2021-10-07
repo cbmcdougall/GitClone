@@ -3,26 +3,11 @@ const moonIcon = document.querySelector('.sun-moon-theme');
 const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 
-// Load dark theme if it was toggled on
-const darkThemeOn = sessionStorage.getItem("darktheme")
-if (darkThemeOn==="true"){
-    document.body.className = "dark-theme";
-    moon.classList.add('hide-icon');
-    sun.classList.remove('hide-icon');
-}
-
 moonIcon.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     moon.classList.toggle('hide-icon');
     sun.classList.toggle('hide-icon');
-    // Store toggle info between pages
-    if (document.body.className.includes("dark-theme")){
-        // Currently in dark mode
-        sessionStorage.setItem("darktheme", "true")
-    } else {
-        // Currently in light mode
-        sessionStorage.setItem("darktheme", "false")
-    }
+
 })
 ////////////////////////////////////////////////
 ///Search bar
@@ -60,30 +45,14 @@ function fillSuggestions(data){
                 // passing return data inside li tag
                 return data = `<li>${data}</li>`;
             });
-            // for (let i = 0; i < emptyArray.length; i++) {
-            //     emptyArray[i].onclick = () => {
-            //         let selectData = this.textContent
-            //         const result = data.filter(post => {
-            //             return selectData.toLowerCase() === post.title.toLowerCase()
-            //             })
-            //             sessionStorage.journalPost = JSON.stringify(result[0]);
-            //             window.location.href = "entry.html"
-            //     }
-            // }
+   
             searchWrapper.classList.add("active"); //show autocomplete box
             showSuggestions(emptyArray);
             let allList = suggBox.querySelectorAll("li");
             for (let i = 0; i < allList.length; i++) {
                 //adding onclick attribute in all li tag
             allList[i].setAttribute("onclick", "select(this)");
-            //     allList[i].onclick = () => {
-            //         let selectData = this.textContent
-            //         const result = data.filter(post => {
-            //             return selectData.toLowerCase() === post.title.toLowerCase()
-            //             })
-            //             sessionStorage.journalPost = JSON.stringify(result[0]);
-            //             window.location.href = "entry.html"
-            //     }
+
             }
             icon.onclick = ()=>{
                 const result = data.filter(post => {
@@ -108,15 +77,7 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     userData = selectData;
-    // icon.onclick = ()=>{
-    //     const result = data.filter(post => {
-    //     return userData.toLowerCase() === post.title.toLowerCase()
-    //     })
-    //     sessionStorage.journalPost = JSON.stringify(result[0]);
-    //     window.location.href = "entry.html"
-        
-    
-    //}
+
     searchWrapper.classList.remove("active");
 }
 function showSuggestions(list){
@@ -150,9 +111,6 @@ function showSuggestions(list){
     
     
 // }
-
-
-module.exports = { fillSuggestions, showSuggestions }
 
 
 
