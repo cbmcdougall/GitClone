@@ -39,6 +39,11 @@ const msgBox = document.getElementById('message');
 
 msgBox.style.display='none';
 
+// Show message box if git add in header navbar was clicked
+const urlParams = new URLSearchParams(window.location.search);
+const gitAddRedirect = urlParams.get("gitadd") || false;
+if (gitAddRedirect) {showMessageBox()}
+
 addPost.addEventListener('click', showMessageBox);
 
 function showMessageBox() {
