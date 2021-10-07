@@ -58,7 +58,7 @@ function adjustEmoji(emoji, adjust){
     }
     // Return status code, server return message, and new emoji count
     const response = {
-      "status": `${status}`
+      "status": `${status}`,
       "message": `${message}`,
       "emojiCount": `${emoji}`
     }
