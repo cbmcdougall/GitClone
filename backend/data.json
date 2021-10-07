@@ -17,7 +17,7 @@
   {
     "id": "2",
     "title": "Why won't this print \"Hello\"?",
-    "text": "<pre class='ql-syntax' spellcheck='false'>console.log(=+Hello+=);</pre><p></p><p>I even put the semicolon at the end of the line!!!</p><p>Could someone please help me out here?</p><p></p>",
+    "text": "<pre class='ql-syntax' spellcheck='false'>console.log(=+Hello+=);</pre><br><p>I even put the semicolon at the end of the line!!!</p><p>Could someone please help me out here?</p><br>",
     "gifUrl": "https://media1.giphy.com/media/daxA5okS3H9gkpKpjR/100.gif?cid=cee99923m3o2kutenstuk1ag2idcqpn1icvf5w4ab644ezs3&rid=100.gif&ct=g",
     "date": "04/10/2021",
     "thumbsUp": "0",
@@ -38,6 +38,14 @@
       "id": "1",
       "body": "Mate, you've got a typo. That says scipt not script!",
       "dateAdded": "05/10/2021"
+    },{
+      "id": "2",
+      "body": "OOHHHHHHH THAT WAS IT THANK YOU!!!!",
+      "dateAdded": "05/10/2021"
+    },{
+      "id": "3",
+      "body": "Happens to the best of us lol",
+      "dateAdded": "06/10/2021"
     }]
   },
   {
