@@ -16,7 +16,6 @@ let hasUserClickedTDown = false;
 let hasUserClickedLaughing = false;
 
 function incrementCount(emoji) {
-    
   if (emoji === "emoji-thumbs-up" && !hasUserClickedTUp) {
     hasUserClickedTUp = true;
     let emojiCount = parseInt(thumbsUpEmoji.children[1].textContent) // Stores the current text content as an integer
