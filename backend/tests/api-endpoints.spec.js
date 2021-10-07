@@ -95,12 +95,17 @@ describe('api routes', () => {
                     "id": "1",
                     "adjust": "add"
                 };
+                this.expectedResponse = {
+                    "status": "200",
+                    "message": "Emoji has been added",
+                    "emojiCount": "3"
+                }
             });
             test("PUT request is successful", (done) => {
                 request(api)
                     .put('/gitpush/thumbsUp')
                     .send(this.requestBody)
-                    .expect("Emoji has been added")
+                    .expect(this.expectedResponse)
                     .expect(200, done);
             });
             test("PUT request adds a thumbs up", async () => {
@@ -108,7 +113,7 @@ describe('api routes', () => {
                 const response = await request(api).get('/pushes');
                 expect(response.status).toBe(200);
                 const thumbsUp = response.body[this.requestBody.id-1].thumbsUp;
-                expect(thumbsUp).toBe(3);
+                expect(thumbsUp).toBe(this.expectedResponse.emojiCount);
             });
         });
         test("PUT /gitpush/thumbsDown on post 2 with 'remove' is successful", async () => {
@@ -126,7 +131,7 @@ describe('api routes', () => {
                 const response = await request(api).get('/pushes');
                 expect(response.status).toBe(200);
                 const thumbsDown = response.body[requestBody.id-1].thumbsDown;
-                expect(thumbsDown).toBe(2);
+                expect(thumbsDown).toBe("2");
             } else {
                 throw new Error(`Put request failed. Status code ${putRequest.status}: ${putRequest.text}`);
             };
