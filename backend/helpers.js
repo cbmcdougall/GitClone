@@ -30,7 +30,7 @@ function addComment(data, inputData){
     // Create new comment data
     const commentId = post.comments.length + 1;
     const commentDate = new Date().toLocaleDateString('en-GB')
-    newComment = {
+    const newComment = {
       "id": `${commentId}`,
       "body": `${inputData.body}`,
       "dateAdded": `${commentDate}`
@@ -57,7 +57,12 @@ function adjustEmoji(emoji, adjust){
       status = 400;
     }
     // Return status code, server return message, and new emoji count
-    return [status, message, emoji];
+    const response = {
+      "status": `${status}`
+      "message": `${message}`,
+      "emojiCount": `${emoji}`
+    }
+    return response;
 }
 
 function deletePost(data, postId, id){

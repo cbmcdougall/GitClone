@@ -74,11 +74,11 @@ app.put('/gitpush/:emoji', (req, res) => {
     // Get new emoji count
     const response = helpers.adjustEmoji(emojiToAdjust, userRequest.adjust);
     // Store new emoji count
-    data[postIndex][emoji] = response[2];
-    // Rest of response is the status and message to send back in server response
-    res.status(response[0]).send(response[1]);
+    data[postIndex][emoji] = response.emojiCount;
+    // Return status, message, and new emoji count
+    res.status(response.status).json(response);
   } catch (err) {
-    res.status(err.status || 500).send(`Unable to complete request, ${err}`);
+    res.status(err.status || 500).send(`Unable to complete request, ${err}. ${postIndex}`);
   }
 })
 
