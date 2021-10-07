@@ -71,25 +71,4 @@ function updateData(emoji, newData){
   sessionStorage.journalPost = JSON.stringify(post);
 }
 
-// async function sendEmojiUpdate(emoji, adjust){
-//   let data = {
-//     id: Number(postId),
-//     adjust: adjust,
-//   };
-
-//   const options = {
-//     method: "PUT",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   };
-//   const response = await fetch(
-//     `https://git-clone-blog.herokuapp.com/gitpush/${emoji}`,
-//     options
-//   );
-//   // const responseJson = await response.json();
-//   console.log(response);
-//   return response
-// }
+module.exports = {incrementCount, sendEmojiUpdate, updateData}
