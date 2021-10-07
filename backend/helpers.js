@@ -73,7 +73,7 @@ function deletePost(data, postId, id){
   for (let i = postIndex; i < data.length; i++){
     data[i].id = i+1;
   }
-  return `Post #${id} successfully deleted`
+  return `Post #${postId} successfully deleted`
 }
 
 function deleteComment(data, postId, id){
@@ -86,6 +86,7 @@ function deleteComment(data, postId, id){
   for (let i = commentIndex; i < post.comments.length; i++){
     post.comments[i].id = i+1;
   }
+  return `Comment #${id} successfully deleted from post #${postId}`
 }
 
 module.exports = {
