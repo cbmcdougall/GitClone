@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./static/images/favicon.png" type="image/x-icon">
+    <title>GitClone</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style0.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="header">
+        <div class="navEntry"> 
+            <a href="./index.html"><i class="far fa-dot-circle"></i></a>
+            <p class="gitTitle">GitClone</p>
+            <p class="separator">|</p>
+            <div class="wrapper">
+                <div class="search-input">
+                  <a href="" target="_blank" hidden></a>
+                  <input type="text" placeholder="git fetch">
+                  <div class="autocom-box">
+                    <!-- here list are inserted from javascript -->
+                  </div>
+                  <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+            </div>
+            <!-- FOR REFERENCE-->
+            <!-- <div class="search-container">
+                <table class="element-search-container">
+                    <tr>
+                        <td>
+                            <input id="searchBar" type="text" placeholder="git fetch" class="search-git" spellcheck="false">
+                        </td>
+                        <td>
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </td>
+                    </tr>
+                </table>
+                <div id="results-container">
+                    <a href="#" class="instant-search-results">
+                        <div class="title-of-post">Title Name</div>
+                    </a>
+                </div>
+                <div id="results-container">
+                    <a href="#" class="instant-search-results">
+                        <div class="title-of-post">Title Name</div>
+                    </a>
+                </div>
+            </div> -->
+            <!-- <form id="myForm">
+                <label for="search"></label>
+                <input type="text" name="search" id="search" placeholder="Type your search term here" required>
+                <input type="submit" value="Search posts">
+            </form> -->
+
+
+            <div id="menu-list">
+                <a href="./index.html" class="pNav">Home</a>
+                <a href="./index.html?gitadd=true" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
+            </div>
+            <div class="sun-moon-theme">
+                <i id="moon" class="far fa-moon pNav" title="dark dimmed"></i>
+                <i id="sun" class="fas fa-sun hide-icon pNav"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="post">
+        <!-- Posts will appear here -->
+        <input type="submit" value="git add" id="gitAdd">
+        <!-- <i class="fas fa-pencil-alt"></i> -->
+    </div>
+
+    <form id="message">
+        <h1>New Post</h1>
+        <div id="post-title">
+            <label for="title">Title:</label>
+            <input type="text" id="titlePost" required>
+        </div>
+        <div id="textAreaContainer">
+            <!-- <textarea name="textArea" id="textArea" spellcheck="false" oninput="characterLimit()" maxlength="400" required></textarea> -->
+            <!-- Create the editor container -->
+            <div id="textArea">
+        </div>
+
+            <p id="character-limit">Remaining characters: 400</p>
+
+    
+        <div id='gif-searcher'>
+            <label for="gifQuery">Search for gif:</label> <br>
+            <input type="text" id='gifQuery' name='gifQuery'> 
+            <br> 
+            <br>
+            <label for="gifLink">Gif link:</label> <br>
+            <input type="text" id='gifLink' name='gifLink' disabled>
+            <br>
+            <br>
+            <img src="" id='gif'>
+        </div>
+     
+
+            <input type="submit" value="git push" id="gitPush">
+        </div>
+    </form>
+
+    <div id="threads">
+        <h1>Previous Pushes</h1>
+        <!-- index.js script renders this part -->
+    </div>
+
+    <div class="footer">
+        <p>GitClone, 2021</p>
+        <a href="../index.html"><i class="far fa-dot-circle"></i></a>
+        <p>Calum, Saja & Zerh</p>
+    </div>
+    
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/theme.js"></script>
+    <script src="./static/js/gitpush.js"></script>
+</body>
+</html>

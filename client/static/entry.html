@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+    <title>GitClone</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="gridEntry">
+        <div class="header">
+            <div class="navEntry"> 
+                <a href="../index.html"><i class="far fa-dot-circle"></i></a>
+                <p class="gitTitle">GitClone</p>
+                <p class="separator">|</p>
+                <div class="wrapper">
+                    <div class="search-input">
+                      <a href="" target="_blank" hidden></a>
+                      <input type="text" placeholder="git fetch">
+                      <div class="autocom-box">
+                        <!-- here list are inserted from javascript -->
+                      </div>
+                      <div class="icon"><i class="fas fa-search"></i></div>
+                    </div>
+                </div>
+                <!-- FOR REFERENCE-->
+                <!-- <div class="search-container">
+                    <table class="element-search-container">
+                        <tr>
+                            <td>
+                                <input id="searchBar" type="text" placeholder="git fetch" class="search-git" spellcheck="false">
+                            </td>
+                            <td>
+                                <a href="#"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="results-container">
+                        <a href="#" class="instant-search-results">
+                            <div class="title-of-post">Title Name</div>
+                        </a>
+                    </div>
+                </div> -->
+                <div id="menu-list">
+                    <a href="../index.html" class="pNav">Home</a>
+                    <a href="../index.html?gitadd=true" class="pNav">git add<i class="fas fa-pencil-alt"></i></a>
+                </div>
+                <!-- <i id="menu-icon"class="fas fa-bars pNav" onlick="toggleMenu()"></i> -->
+                <div class="sun-moon-theme">
+                    <i id="moon" class="far fa-moon pNav" title="dark dimmed"></i>
+                    <i id="sun" class="fas fa-sun hide-icon pNav"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="journalContainer">
+            <div class="journalTitle">
+                <h1 id="journalTitle">Title goes here</h1>
+                <h1 id="journalTitleHash">#1</h1>
+            </div>
+            <div id="journalContent">
+                <div id="journalContentText">
+                    <!-- Filled in by entry.js -->
+                </div>
+                <div id="journalGif">
+                    <img alt="" id='gif'> <!--src added by entry.js -->
+                </div>
+                <div id="interaction-bar">
+                    <div id="date-posted">02/10/2021</div>
+                    <div id="num-of-comments">0</div>
+                    <div id="emojis" class="emojis">
+                        <div id="emoji-thumbs-up">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span class="tUpNum">0</span>
+                        </div>
+                        <div id="emoji-thumbs-down">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span class="tDownNum">0</span>
+                        </div>
+                        <div id="emoji-laughing">
+                            <i class="fas fa-grin-squint-tears"></i>
+                            <span class="laughNum">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="commentContainer">
+            <p>git add comment:</p>
+            <form id="comment-form">
+                <textarea name="comment" id="comment-here" spellcheck="false"></textarea>
+                <input type="submit" id="git-commit" value="git commit">
+
+            </form>
+        </div>
+        <div class="commentSection">All comments here
+            <div id="all-comments">
+
+            </div>
+            
+        </div>
+        <div class="footer">
+            <p>GitClone, 2021</p>
+            <a href="../index.html"><i class="far fa-dot-circle"></i></a>
+            <p>Calum, Saja & Zerh</p>
+        </div>
+        <script src="./js/entry.js"></script>
+        <script src="./js/theme.js"></script>
+        <script src="./js/emoji.js"></script>
+        <script src="./js/gitcommit.js"></script>
+</body>
+</html>
