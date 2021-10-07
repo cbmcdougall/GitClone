@@ -51,3 +51,5 @@ if (post.comments.length){
         commentSection.appendChild(commentContainer);
     });
 }
+// Allow scrolling down the page if contents overflow
+document.body.style.overflow = 'visible'
