@@ -23,7 +23,6 @@ function incrementCount(emoji) {
     thumbsUpEmoji.children[1].textContent = emojiCount.toString() // Stores it back in the html
     sendEmojiUpdate('thumbsUp','add')
     .then(data => console.log(data))
-
   } else if(emoji === "emoji-thumbs-up" && hasUserClickedTUp) {
     hasUserClickedTUp = false;
     thumbsUpEmoji.children[1].textContent--
