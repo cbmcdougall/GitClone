@@ -29,7 +29,7 @@ journalLaughing.children[1].textContent = post.laughing;
 // Comments section
 if (post.comments.length){
     // Only render if there are comments to render
-    post.comments.reverse().forEach(comment => {
+    post.comments.forEach(comment => {
         // Define the containers for the comments
         const commentContainer = document.createElement("div")
         const idContainer = document.createElement("div");
