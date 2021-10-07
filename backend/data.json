@@ -28,7 +28,7 @@
   {
     "id": "3",
     "title": "Script not loading!!!",
-    "text": "<pre class='ql-syntax' spellcheck='false'><scipt src=\"myScript.js\"></scipt></pre><br><p>Why won't my script load?! It's at the bottom of the HTML</p>",
+    "text": "<pre class='ql-syntax' spellcheck='false'>&lt;scipt src=\"myScript.js\"&gt;&lt;/scipt&gt;</pre><br><p>Why won't my script load?! It's at the bottom of the HTML</p>",
     "gifUrl": "https://media4.giphy.com/media/ueYaauTJto3QE9gCjL/100.gif?cid=cee9992369p113iu0k5ifchyqudupaxk8m7vweu1st0cjnxl&rid=100.gif&ct=g",
     "date": "04/10/2021",
     "thumbsUp": "0",
