@@ -221,6 +221,11 @@ body {
     font-family: 'Chakra Petch', sans-serif;
 }
 
+#journalGif {
+    display: flex;
+    justify-content: center;
+}
+
 /* interaction bar*/
 #interaction-bar {
     display: flex;
@@ -340,6 +345,7 @@ textarea {
 .comment {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid #6e747a81;
 }
 
 .comment-id {
