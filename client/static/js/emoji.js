@@ -74,8 +74,8 @@ async function sendEmojiUpdate(emoji, adjust){
   let data = {
     id: Number(postId),
     adjust: adjust,
-
   };
+
   const options = {
     method: "PUT",
     headers: {
