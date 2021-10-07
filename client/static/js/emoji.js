@@ -8,7 +8,7 @@ thumbsDownEmoji = document.getElementById("emoji-thumbs-down");
 thumbsDownEmoji.addEventListener("click", () => incrementCount("emoji-thumbs-down"));
 laughEmoji = document.getElementById("emoji-laughing");
 laughEmoji.addEventListener("click", () => incrementCount("emoji-laughing"));
-
+const postId = document.getElementById("journalTitleHash").textContent.substring(1);
 
 
 let hasUserClickedTUp = false;
@@ -21,25 +21,34 @@ function incrementCount(emoji) {
     let emojiCount = parseInt(thumbsUpEmoji.children[1].textContent) // Stores the current text content as an integer
     emojiCount++ // Increments it by 1
     thumbsUpEmoji.children[1].textContent = emojiCount.toString() // Stores it back in the html
+    sendEmojiUpdate('thumbsUp','add')
+    .then(data => console.log(data))
+
   } else if(emoji === "emoji-thumbs-up" && hasUserClickedTUp) {
     hasUserClickedTUp = false;
     thumbsUpEmoji.children[1].textContent--
+    sendEmojiUpdate('thumbsUp','remove')
   } else if(emoji === "emoji-thumbs-down" && !hasUserClickedTDown) {
     hasUserClickedTDown = true;
     let emojiCount = parseInt(thumbsDownEmoji.children[1].textContent)
     emojiCount++
     thumbsDownEmoji.children[1].textContent = emojiCount.toString()
+    sendEmojiUpdate('thumbsDown','add')
   } else if(emoji === "emoji-thumbs-down" && hasUserClickedTDown) {
     hasUserClickedTDown = false;
     thumbsDownEmoji.children[1].textContent--
+    sendEmojiUpdate('thumbsDown','remove')
   } else if(emoji === "emoji-laughing" && !hasUserClickedLaughing) {
     hasUserClickedLaughing = true;
     let emojiCount = parseInt(laughEmoji.children[1].textContent)
     emojiCount++ // Increments it by 1
     laughEmoji.children[1].textContent = emojiCount.toString()
+    sendEmojiUpdate('laughing','add')
   } else if(emoji === "emoji-laughing" && hasUserClickedLaughing) {
     hasUserClickedLaughing = false;
     laughEmoji.children[1].textContent--
+    sendEmojiUpdate('laughing','remove')
+
   }; 
 };
 
@@ -56,25 +65,34 @@ function changeInnerHTML(emojiElement) {
   emojiElement.innerHTML += String(num + 1);
 }
 
-// async function sendEmojiUpdate(emojis) {
-//   let data = {
-//     emojis,
-//   };
-//   const options = {
-//     method: "PATCH",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   };
-//   const response = await fetch(
-//     `https://git-clone-blog.herokuapp.com/pushes/${selectedId}`,
-//     options
-//   );
-//   const responseJson = await response.json();
-//   console.log(responseJson);
-// }
+//emoji is thumbsUp, thumbsDown, or laughing (case sensitive)
+
+
+
+async function sendEmojiUpdate(emoji, adjust){
+  let data = {
+    id: Number(postId),
+    adjust: adjust,
+  };
+
+  const options = {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+  const response = await fetch(
+    `https://git-clone-blog.herokuapp.com/gitpush/${emoji}`,
+    options
+  );
+  // const responseJson = await response.json();
+  console.log(response);
+  return response
+}
+
+
 
 
 
