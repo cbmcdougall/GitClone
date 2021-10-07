@@ -1,0 +1,2 @@
+// const myFuncs = require('../theme');
+

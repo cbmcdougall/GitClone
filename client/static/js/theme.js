@@ -1,4 +1,4 @@
-//For dark/light theme toggle
+// //For dark/light theme toggle
 const moonIcon = document.querySelector('.sun-moon-theme');
 const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
@@ -137,6 +137,7 @@ function showSuggestions(list){
 // }
 
 
+module.exports = { fillSuggestions, showSuggestions }
 
 
 

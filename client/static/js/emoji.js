@@ -92,6 +92,8 @@ async function sendEmojiUpdate(emoji, adjust){
   return response
 }
 
+module.exports = {incrementCount}
+
 
 
 
