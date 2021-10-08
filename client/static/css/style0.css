@@ -89,8 +89,6 @@ h1 {
     display:flex;
 }
 
-
-
 #gitPush {
     width: 9vw;
     border: 1px solid #146e5c;
@@ -105,7 +103,6 @@ h1 {
 #gitPush:hover {
     background-color: #288d44;
 }
-
 
 /*threads container*/
 #threads {
@@ -131,4 +128,3 @@ h1 {
     width: 200px;
     
 }
-

@@ -39,13 +39,8 @@ fetch("https://git-clone-blog.herokuapp.com/pushes")
     .then(data => fillSuggestions(data))
     .catch(err => console.log(err));
 
-
-
 function fillSuggestions(data){
     const suggestions = data.map(post => {return post.title})
-        
-
-
     
     // if user press any key and release
     inputBox.onkeyup = (e)=>{
@@ -60,34 +55,19 @@ function fillSuggestions(data){
                 // passing return data inside li tag
                 return data = `<li>${data}</li>`;
             });
-            // for (let i = 0; i < emptyArray.length; i++) {
-            //     emptyArray[i].onclick = () => {
-            //         let selectData = this.textContent
-            //         const result = data.filter(post => {
-            //             return selectData.toLowerCase() === post.title.toLowerCase()
-            //             })
-            //             sessionStorage.journalPost = JSON.stringify(result[0]);
-            //             window.location.href = "entry.html"
-            //     }
-            // }
-            searchWrapper.classList.add("active"); //show autocomplete box
+
+            //show autocomplete box
+            searchWrapper.classList.add("active"); 
             showSuggestions(emptyArray);
             let allList = suggBox.querySelectorAll("li");
             for (let i = 0; i < allList.length; i++) {
                 //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
-            //     allList[i].onclick = () => {
-            //         let selectData = this.textContent
-            //         const result = data.filter(post => {
-            //             return selectData.toLowerCase() === post.title.toLowerCase()
-            //             })
-            //             sessionStorage.journalPost = JSON.stringify(result[0]);
-            //             window.location.href = "entry.html"
-            //     }
+                allList[i].setAttribute("onclick", "select(this)");
             }
+
             icon.onclick = ()=>{
                 const result = data.filter(post => {
-                return inputBox.value.toLowerCase() === post.title.toLowerCase()
+                    return inputBox.value.toLowerCase() === post.title.toLowerCase()
                 })
                 sessionStorage.journalPost = JSON.stringify(result[0]);
                 const path = window.location.pathname;
@@ -99,26 +79,19 @@ function fillSuggestions(data){
                     location.reload()
                 }
             }
-        }else{
+        } else {
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
     }
 }
+
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     userData = selectData;
-    // icon.onclick = ()=>{
-    //     const result = data.filter(post => {
-    //     return userData.toLowerCase() === post.title.toLowerCase()
-    //     })
-    //     sessionStorage.journalPost = JSON.stringify(result[0]);
-    //     window.location.href = "entry.html"
-        
-    
-    //}
     searchWrapper.classList.remove("active");
 }
+
 function showSuggestions(list){
     let listData;
     if(!list.length){
@@ -129,22 +102,3 @@ function showSuggestions(list){
     }
     suggBox.innerHTML = listData;
 }
-
-//////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
