@@ -332,6 +332,7 @@ textarea {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #6e747a81;
+    padding: 10px;
 }
 
 .comment-id {
