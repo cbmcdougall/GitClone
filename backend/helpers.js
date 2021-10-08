@@ -65,7 +65,7 @@ function adjustEmoji(emoji, adjust){
     return response;
 }
 
-function deletePost(data, postId, id){
+function deletePost(data, postId){
   const postIndex = postId - 1;
   // Delete the specified post
   data.splice(postIndex, 1);
