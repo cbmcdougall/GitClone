@@ -35,7 +35,7 @@ body {
 
 /*for posts*/
 #message {
-    height: 475px;
+    min-height: 550px;
     margin: 10px 120px;
     padding: 10px 10px;
     margin-bottom: 30px;
