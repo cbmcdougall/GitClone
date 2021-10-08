@@ -7,9 +7,15 @@
 
 ## Installation
 - Clone down or fork the repo
+- To set up the dev server:
+  - navigate into the `backend` folder
+  - run `npm install` to install dependencies
 
 ## Usage
 - Use our link to access the [website](https://git-clone-blog.netlify.app/)
+- In the terminal use `npm start` within the `backend` folder to start a local server
+  - Alternatively, use `npm run dev` to start the server with nodemon
+  - Note that the client-side code makes calls to the heroku-hosted API, so if doing dev work change URLs to the appropriate local host for the dev server
 
 # Technologies implemented
 
