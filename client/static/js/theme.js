@@ -32,13 +32,8 @@ fetch("https://git-clone-blog.herokuapp.com/pushes")
     .then(data => fillSuggestions(data))
     .catch(err => console.log(err));
 
-
-
 function fillSuggestions(data){
     const suggestions = data.map(post => {return post.title})
-        
-
-
     
     // if user press any key and release
     inputBox.onkeyup = (e)=>{
@@ -53,18 +48,19 @@ function fillSuggestions(data){
                 // passing return data inside li tag
                 return data = `<li>${data}</li>`;
             });
-   
-            searchWrapper.classList.add("active"); //show autocomplete box
+
+            //show autocomplete box
+            searchWrapper.classList.add("active"); 
             showSuggestions(emptyArray);
             let allList = suggBox.querySelectorAll("li");
             for (let i = 0; i < allList.length; i++) {
                 //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
-
+                allList[i].setAttribute("onclick", "select(this)");
             }
+
             icon.onclick = ()=>{
                 const result = data.filter(post => {
-                return inputBox.value.toLowerCase() === post.title.toLowerCase()
+                    return inputBox.value.toLowerCase() === post.title.toLowerCase()
                 })
                 sessionStorage.journalPost = JSON.stringify(result[0]);
                 const path = window.location.pathname;
@@ -76,18 +72,19 @@ function fillSuggestions(data){
                     location.reload()
                 }
             }
-        }else{
+        } else {
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
     }
 }
+
 function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     userData = selectData;
-
     searchWrapper.classList.remove("active");
 }
+
 function showSuggestions(list){
     let listData;
     if(!list.length){
@@ -98,36 +95,3 @@ function showSuggestions(list){
     }
     suggBox.innerHTML = listData;
 }
-
-///////////////////////////////////////////////////////////////////
-//git add -header eventListener
-
-// const gitAddBtn = document.querySelector("#gitAddHeadBtn");
-// const msgBox = document.getElementById('message');
-
-// gitAddBtn.addEventListener('click', transportPost);
-
-// function transportPost() {
-    
-//     msgBox.style.display = 'block'
-//     window.location.href = '/client/index.html'
-//     if (msgBox.style.display==='none') {
-//         msgBox.style.display = 'block'
-//     } else {
-//         msgBox.style.display = 'block'
-//     }
-    
-    
-// }
-
-module.exports = { toggleThemes, fillSuggestions, select,  showSuggestions}
-
-
-
-
-
-
-
-
-
-

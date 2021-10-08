@@ -17,9 +17,7 @@ function characterLimit() {
     const remainingChars = 400-currentInput.length;
     
     const charLimitText = document.getElementById("character-limit")
-    //const colour = remainingChars >= 0 ? 'green': 'red'
     charLimitText.textContent = `Remaining characters: ${remainingChars}`;
-    // charLimitText.style.color = colour
 }
 
 
@@ -66,7 +64,6 @@ function delay(callback, ms) {
     };
   }
   
-
 const gifSearch = document.getElementById('gifQuery')
 const gifLink = document.getElementById('gifLink')
 const gifImg = document.getElementById('gif')
@@ -81,7 +78,6 @@ gifSearch.addEventListener('keyup', delay(function (e) {
         gifImg.src=link;
         gifLink.value=link;
     })
-
 }, 1000))
 
 

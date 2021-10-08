@@ -1,7 +1,6 @@
 let thumbsUpEmoji, laughEmoji, thumbsDownEmoji;
 const emojis = document.querySelector('#emojis');
 
-
 thumbsUpEmoji = document.getElementById("emoji-thumbs-up");
 thumbsUpEmoji.children[0].addEventListener("click", () => incrementCount("emoji-thumbs-up"));
 thumbsDownEmoji = document.getElementById("emoji-thumbs-down");
@@ -42,9 +41,8 @@ function incrementCount(emoji) {
   }; 
 };
 
-//emoji is thumbsUp, thumbsDown, or laughing (case sensitive)
-  
 function sendEmojiUpdate(emoji, adjust){
+  //emoji is thumbsUp, thumbsDown, or laughing (case sensitive)
   const post = JSON.parse(sessionStorage.journalPost);
   const postId = post.id;
   let data = {
@@ -70,5 +68,3 @@ function updateData(emoji, newData){
   post[emoji] = newData.emojiCount;
   sessionStorage.journalPost = JSON.stringify(post);
 }
-
-module.exports = {incrementCount, sendEmojiUpdate, updateData}

@@ -89,9 +89,7 @@ h1 {
     display:flex;
 }
 
-
-
-#message #gitPush {
+#gitPush {
     width: 9vw;
     border: 1px solid #146e5c;
     border-radius: 5px;
@@ -106,7 +104,6 @@ h1 {
 #gitPush:hover {
     background-color: #288d44;
 }
-
 
 /*threads container*/
 #threads {
@@ -131,8 +128,4 @@ h1 {
     height: 20px;
     width: 200px;
     
-}
-
-.ql-editor {
-    max-height:300px;
 }
