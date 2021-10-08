@@ -345,11 +345,8 @@ textarea {
 .comment {
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
-    padding: 10px;
-=======
     border-top: 1px solid #6e747a81;
->>>>>>> staging
+    padding: 10px;
 }
 
 .comment-id {

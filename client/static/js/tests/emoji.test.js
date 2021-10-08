@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const html = fs.readFileSync(path.resolve(__dirname, '../../entry.html'), 'utf8');
-const {incrementCount}  = require('../emoji');
+const {incrementCount, sendEmojiUpdate, updateData}  = require('../emoji');
 
 
 
 describe('entry.html', () => {
     beforeEach(() => {
-        document.documentElement.innerHTML = '<div id="emoji-thumbs-up"><i class="fas fa-thumbs-up"></i><span class="tUpNum">0</span></div>';
+        document.documentElement.innerHTML = html.toString();
     })
 
     test("increment count", () => {
