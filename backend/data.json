@@ -16,13 +16,62 @@
   },
   {
     "id": "2",
-    "title": "Hello again!",
-    "text": "It's getting kinda lonely, pls add more posts",
-    "gifUrl": "",
+    "title": "Why won't this print \"Hello\"?",
+    "text": "<pre class='ql-syntax' spellcheck='false'>console.log(=+Hello+=);</pre><br><p>I even put the semicolon at the end of the line!!!</p><p>Could someone please help me out here?</p><br>",
+    "gifUrl": "https://media1.giphy.com/media/daxA5okS3H9gkpKpjR/100.gif?cid=cee99923m3o2kutenstuk1ag2idcqpn1icvf5w4ab644ezs3&rid=100.gif&ct=g",
     "date": "04/10/2021",
     "thumbsUp": "0",
     "thumbsDown": "3",
     "laughing": "0",
+    "comments": []
+  },
+  {
+    "id": "3",
+    "title": "Script not loading!!!",
+    "text": "<pre class='ql-syntax' spellcheck='false'>&lt;scipt src=\"myScript.js\"&gt;&lt;/scipt&gt;</pre><br><p>Why won't my script load?! It's at the bottom of the HTML</p>",
+    "gifUrl": "https://media4.giphy.com/media/ueYaauTJto3QE9gCjL/100.gif?cid=cee9992369p113iu0k5ifchyqudupaxk8m7vweu1st0cjnxl&rid=100.gif&ct=g",
+    "date": "04/10/2021",
+    "thumbsUp": "0",
+    "thumbsDown": "1",
+    "laughing": "4",
+    "comments": [{
+      "id": "1",
+      "body": "Mate, you've got a typo. That says scipt not script!",
+      "dateAdded": "05/10/2021"
+    },{
+      "id": "2",
+      "body": "OOHHHHHHH THAT WAS IT THANK YOU!!!!",
+      "dateAdded": "05/10/2021"
+    },{
+      "id": "3",
+      "body": "Happens to the best of us lol",
+      "dateAdded": "06/10/2021"
+    }]
+  },
+  {
+    "id": "4",
+    "title": "git merge isn't merging",
+    "text": "<p>I tried to merge from one of my branches to my main branch but it's put me in some sort of text editor?</p><br><p>I'm not quite sure where I am, I don't know how to get out of this editor, i'm worried that if I try alt+f4 i'll just lose everything</p>",
+    "gifUrl": "",
+    "date": "05/10/2021",
+    "thumbsUp": "0",
+    "thumbsDown": "2",
+    "laughing": "1",
+    "comments": [{
+      "id": "1",
+      "body": "OP here - turns out I was in VIM, managed to get out!",
+      "dateAdded": "05/10/2021"
+    }]
+  },
+  {
+    "id": "5",
+    "title": "Light mode vs dark mode",
+    "text": "The eternal debate... why would you ever use light mode? It just hurts my eyes!",
+    "gifUrl": "",
+    "date": "05/10/2021",
+    "thumbsUp": "7",
+    "thumbsDown": "4",
+    "laughing": "8",
     "comments": []
   }
 ]
