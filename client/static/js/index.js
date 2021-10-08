@@ -66,7 +66,6 @@ function delay(callback, ms) {
     };
   }
   
-
 const gifSearch = document.getElementById('gifQuery')
 const gifLink = document.getElementById('gifLink')
 const gifImg = document.getElementById('gif')
@@ -81,7 +80,6 @@ gifSearch.addEventListener('keyup', delay(function (e) {
         gifImg.src=link;
         gifLink.value=link;
     })
-
 }, 1000))
 
 
