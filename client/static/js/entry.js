@@ -29,22 +29,27 @@ journalLaughing.children[1].textContent = post.laughing;
 // Comments section
 if (post.comments.length){
     // Only render if there are comments to render
-    post.comments.reverse().forEach(comment => {
+    post.comments.forEach(comment => {
         // Define the containers for the comments
-        const bodyContainer = document.createElement("P");
+        const commentContainer = document.createElement("div")
         const idContainer = document.createElement("div");
+        const bodyContainer = document.createElement("P");
         const dateContainer = document.createElement("div");
         // Add the classes for CSS styling
-        bodyContainer.className = "comment-body";
+        commentContainer.className = "comment";
         idContainer.className = "comment-id";
+        bodyContainer.className = "comment-body";
         dateContainer.className = "comment-date";
         // Add the contents
-        bodyContainer.textContent = comment.body;
         idContainer.textContent = `#${comment.id}`;
+        bodyContainer.textContent = comment.body;
         dateContainer.textContent = comment.dateAdded;
         // Add to the comment section
-        commentSection.appendChild(bodyContainer);
-        commentSection.appendChild(idContainer);
-        commentSection.appendChild(dateContainer);
+        commentContainer.appendChild(idContainer);
+        commentContainer.appendChild(bodyContainer);
+        commentContainer.appendChild(dateContainer);
+        commentSection.appendChild(commentContainer);
     });
 }
+// Allow scrolling down the page if contents overflow
+document.body.style.overflow = 'visible'
