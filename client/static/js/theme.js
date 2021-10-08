@@ -3,12 +3,20 @@ const moonIcon = document.querySelector('.sun-moon-theme');
 const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 
-moonIcon.addEventListener('click', () => {
+// moonIcon.addEventListener('click', () => {
+//     document.body.classList.toggle('dark-theme');
+//     moon.classList.toggle('hide-icon');
+//     sun.classList.toggle('hide-icon');
+
+// })
+
+moonIcon.addEventListener('click', toggleThemes);
+
+function toggleThemes() {
     document.body.classList.toggle('dark-theme');
     moon.classList.toggle('hide-icon');
     sun.classList.toggle('hide-icon');
-
-})
+}
 ////////////////////////////////////////////////
 ///Search bar
 
@@ -112,6 +120,7 @@ function showSuggestions(list){
     
 // }
 
+module.exports = { toggleThemes, fillSuggestions, select,  showSuggestions}
 
 
 

@@ -5,9 +5,9 @@ const emojis = document.querySelector('#emojis');
 thumbsUpEmoji = document.getElementById("emoji-thumbs-up");
 thumbsUpEmoji.children[0].addEventListener("click", () => incrementCount("emoji-thumbs-up"));
 thumbsDownEmoji = document.getElementById("emoji-thumbs-down");
-thumbsDownEmoji.addEventListener("click", () => incrementCount("emoji-thumbs-down"));
+thumbsDownEmoji.children[0].addEventListener("click", () => incrementCount("emoji-thumbs-down"));
 laughEmoji = document.getElementById("emoji-laughing");
-laughEmoji.addEventListener("click", () => incrementCount("emoji-laughing"));
+laughEmoji.children[0].addEventListener("click", () => incrementCount("emoji-laughing"));
 
 let hasUserClickedTUp = false;
 let hasUserClickedTDown = false;
