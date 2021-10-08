@@ -145,7 +145,7 @@ function renderPosts(posts){
         const laughingNumber = document.createElement("span");
         
         // Insert data into elements
-        postTitle.textContent = post.title;
+        postTitle.textContent = `#${post.id} ${post.title}`;
         pushDate.textContent = post.date;
         pushComments.textContent = post.comments.length;
         thumbsUpNumber.textContent = post.thumbsUp;
